@@ -75,3 +75,13 @@ Prawo Unii Europejskiej.
 - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
 - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
 
+## 3. Wymagania funkcjonalne
+
+### 3.1 Priorytetyzacja Wymagań
+| ID | Opis | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
+|:---|:--------|:------:|:----:|:----:|:-----:|:--------:|:------:|
+| **XXX-01** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
+| **XXX-02** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
+| **XXX-03** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
+| **XXX-04** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
+| **XXX-05** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ❌ |
