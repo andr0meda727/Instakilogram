@@ -58,3 +58,20 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Administrator**:
   - Możliwość usuwania postów łamiących regulamin.
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
+
+### 2.3 Ograniczenia projektowe
+
+#### 2.3.1 **Ograniczenia prawne**
+
+**Ograniczenie:**  
+System musi być zgodny z Rozporządzeniem o Ochronie Danych Osobowych (RODO), a wszystkie dane osobowe użytkowników muszą być fizycznie przechowywane na serwerach zlokalizowanych w granicach Europejskiego Obszaru Gospodarczego (EOG).
+
+**Źródło:**  
+Prawo Unii Europejskiej.
+
+**Wpływ na architekturę systemu:**  
+- Drastycznie zawęża wybór dostawców usług chmurowych do tych, którzy posiadają centra danych w EOG.
+- Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
+- Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
+- System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+
