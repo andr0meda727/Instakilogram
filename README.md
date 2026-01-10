@@ -47,7 +47,14 @@ cele biznesowe, cele uzytkownika i kpi??
 ## 2. Opis ogólny
 
 ### 2.1 Główne funkcje produktu
+
 - **Wyświetlanie postów** Użytkownik może wyświetlić ostatnio dodane posty swoich znajomych.
 - **Publikacja zdjęć** Użytkownik posiada możliwość dodania zdjęcia z opisem.
 - **Zarządzanie zdjęciami** Użytkownik posiada możliwość usunięcia zdjęcia, jak i edycji jego opisu.
 - **Komentarze** Użytkownik posiada możliwość komentowania opublikowanych zdjęć.
+
+### 2.2 Klasy użytkowników
+
+- **Administrator**:
+  - Możliwość usuwania postów łamiących regulamin.
+  - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
