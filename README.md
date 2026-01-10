@@ -61,27 +61,41 @@ cele biznesowe, cele uzytkownika i kpi??
 
 ### 2.3 Ograniczenia projektowe
 
-#### 2.3.1 **Ograniczenia prawne**
+#### 2.3.1 Ograniczenia prawne
 
-**Ograniczenie:**  
-System musi być zgodny z Rozporządzeniem o Ochronie Danych Osobowych (RODO), a wszystkie dane osobowe użytkowników muszą być fizycznie przechowywane na serwerach zlokalizowanych w granicach Europejskiego Obszaru Gospodarczego (EOG).
+- **Ograniczenie:**  
+  System musi być zgodny z Rozporządzeniem o Ochronie Danych Osobowych (RODO), a wszystkie dane osobowe użytkowników muszą być fizycznie przechowywane na serwerach zlokalizowanych w granicach Europejskiego Obszaru Gospodarczego (EOG).
 
-**Źródło:**  
-Prawo Unii Europejskiej.
+- **Źródło:**  
+  Prawo Unii Europejskiej.
 
-**Wpływ na architekturę systemu:**  
-- Drastycznie zawęża wybór dostawców usług chmurowych do tych, którzy posiadają centra danych w EOG.
-- Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
-- Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
-- System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+- **Wpływ na architekturę systemu:**
+
+  - Drastycznie zawęża wybór dostawców usług chmurowych do tych, którzy posiadają centra danych w EOG.
+  - Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
+  - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
+  - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+
+### 2.4 Założenia projektowe
+
+#### 2.4.1 Założenia techniczne
+
+- **Założenie:** Zakładamy wykorzystanie narzędzia [FFmpeg](ffmpeg.org) do standaryzacji szerokości zdjęć do 1080px oraz ich konwersji do formatu WebP z zachowaniem 80% jakości. Wnioskujemy, że pozwoli to na redukcję rozmiaru zdjęć o co najmniej 40%.
+- **Ryzyko:** Przetwarzanie obrazów wymaga dużej mocy obliczeniowej procesora. Przy zwiększonej liczbie przesyłanych zdjęć, serwer może ulec przeciążeniu, co zwiększy czas odpowiedzi aplikacji lub doprowadzi do jej tymczasowej niedostępności.
+- **Plan walidacji:**
+  - **Co:** Przeprowadzenie testów wydajności procesu konwersji zdjęć.
+  - **Jak:** Stworzenie skryptu testowego, który dokona konwersji 500 zdjęć - obserwacja obciążenia podczas tego procesu.
+  - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
+  - **Kto:** Jeden z deweloperów.
 
 ## 3. Wymagania funkcjonalne
 
 ### 3.1 Priorytetyzacja Wymagań
-| ID | Opis | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
-|:---|:--------|:------:|:----:|:----:|:-----:|:--------:|:------:|
-| **XXX-01** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
-| **XXX-02** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
-| **XXX-03** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
-| **XXX-04** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ✅ |
-| **XXX-05** | vvvvvvvvvvvvvvvvvv | 0 | 0 | 0 | 0 | **0** | ❌ |
+
+| ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
+| :--------- | :----------------- | :-----: | :--: | :---: | :----: | :-------: | :-----: |
+| **XXX-01** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
+| **XXX-02** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
+| **XXX-03** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
+| **XXX-04** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
+| **XXX-05** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ❌    |
