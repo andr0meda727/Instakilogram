@@ -80,6 +80,18 @@ cele biznesowe, cele uzytkownika i kpi??
   - Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+#### 2.3.2 Ograniczenia środowiskowe
+- **Ograniczenie:**  
+System musi być zaprojektowany przy użyciu narzędzi i sposobów poznanych na uczelni. Spełniać założenia przedmiotu na którym będzie oceniany projekt
+
+- **Źródło:**  
+Uczelnia
+
+- **Wpływ na architekturę systemu:**
+
+    - Ogranicza czas, który może zostać poświęcony na projektowanie systemu.
+    - Zawęża funkcjonalności do najprostszych.
+    - Narzuca pracę w 3-osobowym zespole studentów.
 
 
 ### 2.4 Założenia projektowe
