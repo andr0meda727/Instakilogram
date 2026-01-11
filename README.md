@@ -52,6 +52,8 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Publikacja zdjęć** Użytkownik posiada możliwość dodania zdjęcia z opisem.
 - **Zarządzanie zdjęciami** Użytkownik posiada możliwość usunięcia zdjęcia, jak i edycji jego opisu.
 - **Komentarze** Użytkownik posiada możliwość komentowania opublikowanych zdjęć.
+-  **Rekomendacja postów** Inteligentne algorytmy rekomendujące posty użytkownika tak, aby zmaksymalizować zainteresowanie użytkownika
+- **Promowanie postów** W szczytowym zainteresowaniu algorytmy będą wyświetlać promowane posty, dostępne do wykupienia przez konta firmowe
 
 ### 2.2 Klasy użytkowników
 
