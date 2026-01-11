@@ -151,6 +151,27 @@ Uczelnia
       - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
       - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
 
+**WF-02**
+- **Tytuł:** Zarządzanie reklamami oraz ich wyświetlanie użytkownikom
+- **Opis:** Umożliwia reklamodawcom (konto firmowe) dodawanie reklam do systemu, a aplikacji wyświetlanie ich w formie niespersonalizowanych postów sponsorowanych oraz zliczanie ich wyświetleń.
+- **Historyjka Użytkownika:**
+  - Jako reklamodawca,
+  - chcę mieć możliwość dodania reklamy do systemu oraz sprawdzenia jej statystyk,
+  - aby móc promować swój biznes i ocenić skuteczność kampanii.
+- **Cel Biznesowy:** Umożliwienie małym, lokalnym firmom taniej i prosto reklamować się w aplikacji oraz przetestowanie systemu reklamowego poprzez osiągnięcie założonej liczby wyświetleń.
+- **Warunki Wstępne:** Użytkownik posiada konto firmowe oraz jest zalogowany do aplikacji.
+- **Warunki Końcowe:** Reklama zostaje zapisana w systemie. Reklama jest wyświetlana użytkownikom na stronie głównej. System zlicza wyświetlenia reklamy.
+- **Kryteria Akceptacji:**
+  - **WF-02-A: Dodanie nowej reklamy (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca dodaje nową reklamę do systemu.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Mam przygotowaną treść reklamy (obraz + opis).
+      - **When:** Przechodzę do panelu reklam, klikam „Dodaj reklamę”, wypełniam formularz i klikam „Zapisz”.
+      - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
+      - **And:** Reklama pojawia się na liście aktywnych reklam.
+      - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
+
 
 ### 3.1 Priorytetyzacja Wymagań
 
