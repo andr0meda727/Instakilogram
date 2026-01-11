@@ -52,7 +52,9 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Publikacja zdjęć** Użytkownik posiada możliwość dodania zdjęcia z opisem.
 - **Zarządzanie zdjęciami** Użytkownik posiada możliwość usunięcia zdjęcia, jak i edycji jego opisu.
 - **Komentarze** Użytkownik posiada możliwość komentowania opublikowanych zdjęć.
--  **Rekomendacja postów** Inteligentne algorytmy rekomendujące posty użytkownika tak, aby zmaksymalizować zainteresowanie użytkownika
+- **Sieć znajomych** Użytkownik posiada możliwość obserwacji swoich znajomych
+- **Wyświetlanie postów znajomych** Po obserwacji użytkownik może wyświetlać posty znajomych na stronie głównej
+- **Rekomendacja postów** Inteligentne algorytmy rekomendujące posty użytkownika tak, aby zmaksymalizować zainteresowanie użytkownika
 - **Promowanie postów** W szczytowym zainteresowaniu algorytmy będą wyświetlać promowane posty, dostępne do wykupienia przez konta firmowe
 
 ### 2.2 Klasy użytkowników
@@ -61,6 +63,10 @@ cele biznesowe, cele uzytkownika i kpi??
   - Możliwość usuwania postów łamiących regulamin.
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
 
+- **Konto firmowe**:
+    - Możliwość dodania sponsorowanego posta.
+    - Prosty panel do wyświetlenia statystyk danego posta.
+    
 - **Użytkownik**:
   - Wyświetlanie postów.
   - Publikacja zdjęć
@@ -83,6 +89,21 @@ cele biznesowe, cele uzytkownika i kpi??
   - Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+
+
+#### 2.3.2 Ograniczenia środowiskowe
+- **Ograniczenie:**  
+System musi być zaprojektowany przy użyciu narzędzi i sposobów poznanych na uczelni. Spełniać założenia przedmiotu na którym będzie oceniany projekt
+
+- **Źródło:**  
+Uczelnia
+
+- **Wpływ na architekturę systemu:**
+
+    - Ogranicza czas, który może zostać poświęcony na projektowanie systemu.
+    - Zawęża funkcjonalności do najprostszych.
+    - Narzuca pracę w 3-osobowym zespole studentów.
+
 
 #### 2.3.3 Ograniczenie biznesowe
 
@@ -110,7 +131,17 @@ cele biznesowe, cele uzytkownika i kpi??
   - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
   - **Kto:** Jeden z deweloperów.
 
-#### 2.4.3 Założenia techniczne
+#### 2.4.3 Założenia finansowe
+
+- **Założenie:** Zakładamy, że projekt będzie realizowany przez studentów w ramach zajęć akademickich oraz utrzymywany na infrastrukturze chmurowej dostępnej w ramach bezpłatnej puli studenckiej Microsoft Azure. W związku z ograniczonym budżetem zakładamy wykorzystanie wyłącznie darmowych lub otwartoźródłowych narzędzi. Zakładamy, że taka konfiguracja będzie wystarczająca dla środowiska testowego i niewielkiej liczby użytkowników(pare studentów).
+- **Ryzyko:** Ograniczone zasoby dostępne w darmowej puli Azure (moc obliczeniowa, pamięć RAM, transfer danych) mogą prowadzić do obniżonej wydajności systemu, dłuższych czasów odpowiedzi aplikacji. Istnieje również ryzyko przekroczenia limitów darmowego planu, co może spowodować wstrzymanie działania serwera lub naliczenie wysokich kosztów.
+- **Plan walidacji:**
+  - **Co:** Sprawdzenie wydajności aplikacji oraz zużycia zasobów w ramach darmowej puli Azure.
+  - **Jak:** Uruchomienie aplikacji w docelowej konfiguracji i przeprowadzenie testów obciążeniowych, symulujących jednoczesne korzystanie z aplikacji przez 50–100 użytkowników. Monitorowanie zużycia CPU, pamięci RAM oraz transferu danych za pomocą Azure Monitor.
+  - **Kiedy:** Po wdrożeniu pierwszej wersji aplikacji na środowisko testowe w chmurze.
+  - **Kto:** Jeden z deweloperów.
+
+#### 2.4.3 Założenia prawno-techniczne
 
 - **Założenie:** Zakładamy że do moderacji treści wystarczy minimalistyczny sytem polegający na systemie zgłaszania niepoprawnych treści przez użytkowników. 
 - **Ryzyko:** Użytkownicy nie będą zgłaszać treści naruszających regulamin aplikacji, przez co platforma jest narażona na pociągnięcie do odpowiedzialności przez podmioty prawne.
@@ -155,6 +186,28 @@ cele biznesowe, cele uzytkownika i kpi??
       - **When:** Kliknę przycisk "Wstaw zdjęcie" oraz wybiorę nagrany film
       - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
       - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
+
+**WF-02**
+
+- **Tytuł:** Zarządzanie reklamami oraz ich wyświetlanie użytkownikom
+- **Opis:** Umożliwia reklamodawcom (konto firmowe) dodawanie reklam do systemu, a aplikacji wyświetlanie ich w formie niespersonalizowanych postów sponsorowanych oraz zliczanie ich wyświetleń.
+- **Historyjka Użytkownika:**
+  - Jako reklamodawca,
+  - chcę mieć możliwość dodania reklamy do systemu oraz sprawdzenia jej statystyk,
+  - aby móc promować swój biznes i ocenić skuteczność kampanii.
+- **Cel Biznesowy:** Umożliwienie małym, lokalnym firmom taniej i prosto reklamować się w aplikacji oraz przetestowanie systemu reklamowego poprzez osiągnięcie założonej liczby wyświetleń.
+- **Warunki Wstępne:** Użytkownik posiada konto firmowe oraz jest zalogowany do aplikacji.
+- **Warunki Końcowe:** Reklama zostaje zapisana w systemie. Reklama jest wyświetlana użytkownikom na stronie głównej. System zlicza wyświetlenia reklamy.
+- **Kryteria Akceptacji:**
+  - **WF-02-A: Dodanie nowej reklamy (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca dodaje nową reklamę do systemu.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Mam przygotowaną treść reklamy (obraz + opis).
+      - **When:** Przechodzę do panelu reklam, klikam „Dodaj reklamę”, wypełniam formularz i klikam „Zapisz”.
+      - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
+      - **And:** Reklama pojawia się na liście aktywnych reklam.
+      - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
 
 **WF-03**
 
