@@ -90,6 +90,40 @@ cele biznesowe, cele uzytkownika i kpi??
 
 ## 3. Wymagania funkcjonalne
 
+**WF-01**
+
+- **Tytuł:** Zarządzanie zdjęciami
+- **Opis:** Umożliwia użytkownikom publikowanie zdjęć, jak i zarządzanie nimi (edycja, usuwanie).
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - chcę mieć możliwość publikacji, edycji opisu jak i usuwania zdjęć
+  - abym mógł dzielić się swoimi chwilami z innymi.
+- **Cel Biznesowy:** Udostępnienie platformy do dzielenia się zdjęciami z innymi użytkownikami
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Zdjęcie użytkownika zostaje opublikowane, oraz ma on możliwość edycji jego opisu, jak i usunięcia zdjęcia.
+- **Kryteria Akceptacji:**
+
+  - **WF-01-A: Pomyślne opublikowanie zdjęcia (Scenariusz Główny)**
+
+    - _Opis:_ Zalogowany użytkownik próbuje opublikować zdjęcie
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Zrobiłem ciekawe zdjęcie i chcę je opublikować
+      - **When:** Kliknę przycisk "Wstaw zdjęcie", wybiorę interesujące mnie zdjęcie oraz kliknę "Opublikuj".
+      - **Then:** Dostanę informację o rozpoczętym procesie publikacji.
+      - **And:** Post ze zdjęciem pojawi się na moim profilu.
+      - **And:** Post ze zdjęciem wyświetli się na stronie głównej moich obserwujących.
+
+  - **WF-01-B: Próba przesłania formatu wideo (Scenariusz Alternatywny)**
+
+    - _Opis:_ Aplikacja uniemożliwia opublikowanie formatu wideo
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Nagrałem film oraz chcę go opublikować
+      - **When:** Kliknę przycisk "Wstaw zdjęcie" oraz wybiorę nagrany film
+      - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
+      - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
+
 ### 3.1 Priorytetyzacja Wymagań
 
 | ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
