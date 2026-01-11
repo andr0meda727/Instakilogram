@@ -61,6 +61,12 @@ cele biznesowe, cele uzytkownika i kpi??
   - Możliwość usuwania postów łamiących regulamin.
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
 
+- **Użytkownik**:
+  - Wyświetlanie postów.
+  - Publikacja zdjęć
+  - Wyświetlanie profili
+  - Funkcje społecznościowe takie jak budowanie sieci znajomych
+
 ### 2.3 Ograniczenia projektowe
 
 #### 2.3.1 Ograniczenia prawne
