@@ -52,6 +52,8 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Publikacja zdjęć** Użytkownik posiada możliwość dodania zdjęcia z opisem.
 - **Zarządzanie zdjęciami** Użytkownik posiada możliwość usunięcia zdjęcia, jak i edycji jego opisu.
 - **Komentarze** Użytkownik posiada możliwość komentowania opublikowanych zdjęć.
+- **Sieć znajomych** Użytkownik posiada możliwość obserwacji swoich znajomych
+- **Wyświetlanie postów znajomych** Po obserwacji użytkownik może wyświetlać posty znajomych
 
 ### 2.2 Klasy użytkowników
 
@@ -59,6 +61,9 @@ cele biznesowe, cele uzytkownika i kpi??
   - Możliwość usuwania postów łamiących regulamin.
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
 
+- **Konto firmowe**:
+    - Możliwość dodania sponsorowanego posta.
+    - Prosty panel do wyświetlenia statystyk danego posta.
 ### 2.3 Ograniczenia projektowe
 
 #### 2.3.1 Ograniczenia prawne
@@ -75,6 +80,7 @@ cele biznesowe, cele uzytkownika i kpi??
   - Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
+
 
 ### 2.4 Założenia projektowe
 
@@ -123,6 +129,7 @@ cele biznesowe, cele uzytkownika i kpi??
       - **When:** Kliknę przycisk "Wstaw zdjęcie" oraz wybiorę nagrany film
       - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
       - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
+
 
 ### 3.1 Priorytetyzacja Wymagań
 
