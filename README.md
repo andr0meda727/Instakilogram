@@ -110,6 +110,16 @@ cele biznesowe, cele uzytkownika i kpi??
   - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
   - **Kto:** Jeden z deweloperów.
 
+#### 2.4.3 Założenia techniczne
+
+- **Założenie:** Zakładamy że do moderacji treści wystarczy minimalistyczny sytem polegający na systemie zgłaszania niepoprawnych treści przez użytkowników. 
+- **Ryzyko:** Użytkownicy nie będą zgłaszać treści naruszających regulamin aplikacji, przez co platforma jest narażona na pociągnięcie do odpowiedzialności przez podmioty prawne.
+- **Plan walidacji:**
+  - **Co:** Badanie skuteczności wprowadzonego systemu
+  - **Jak:** Badanie statystyczne zgłaszanych postów, ile zostało poprawnie zgłoszony ile false positive. Dodatkowo ankiety satysfakcji dla użytkowników
+  - **Kiedy:** Pierwsze miesiące działalności
+  - **Kto:** Zespół deweloperów
+
 ## 3. Wymagania funkcjonalne
 
 **WF-01**
