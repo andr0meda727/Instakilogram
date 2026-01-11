@@ -52,12 +52,20 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Publikacja zdjęć** Użytkownik posiada możliwość dodania zdjęcia z opisem.
 - **Zarządzanie zdjęciami** Użytkownik posiada możliwość usunięcia zdjęcia, jak i edycji jego opisu.
 - **Komentarze** Użytkownik posiada możliwość komentowania opublikowanych zdjęć.
+-  **Rekomendacja postów** Inteligentne algorytmy rekomendujące posty użytkownika tak, aby zmaksymalizować zainteresowanie użytkownika
+- **Promowanie postów** W szczytowym zainteresowaniu algorytmy będą wyświetlać promowane posty, dostępne do wykupienia przez konta firmowe
 
 ### 2.2 Klasy użytkowników
 
 - **Administrator**:
   - Możliwość usuwania postów łamiących regulamin.
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
+
+- **Użytkownik**:
+  - Wyświetlanie postów.
+  - Publikacja zdjęć
+  - Wyświetlanie profili
+  - Funkcje społecznościowe takie jak budowanie sieci znajomych
 
 ### 2.3 Ograniczenia projektowe
 
@@ -76,6 +84,20 @@ cele biznesowe, cele uzytkownika i kpi??
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
 
+#### 2.3.3 Ograniczenie biznesowe
+
+- **Ograniczenie:**  
+  Infrastruktura powinna być maksymalnie tania, ale z możliwością skalowania, tak żeby do czasu pierwszych zysków z promowania postów nie wyczerpał się niewielki budżet
+
+- **Źródło:**  
+  Budżet przedsięwzięcia i ocena ryzyka
+
+- **Wpływ na architekturę systemu:**
+
+  - System budowany z myślą o chmurze
+  - Wybór dostawców chmury zawężony do hyperscalerów którzy zapewnią skalowalność
+  - Optymalizacja projektu pod kątem minimalizacji kosztów przetwarzania w chmurze
+
 ### 2.4 Założenia projektowe
 
 #### 2.4.1 Założenia techniczne
@@ -87,6 +109,16 @@ cele biznesowe, cele uzytkownika i kpi??
   - **Jak:** Stworzenie skryptu testowego, który dokona konwersji 500 zdjęć - obserwacja obciążenia podczas tego procesu.
   - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
   - **Kto:** Jeden z deweloperów.
+
+#### 2.4.3 Założenia techniczne
+
+- **Założenie:** Zakładamy że do moderacji treści wystarczy minimalistyczny sytem polegający na systemie zgłaszania niepoprawnych treści przez użytkowników. 
+- **Ryzyko:** Użytkownicy nie będą zgłaszać treści naruszających regulamin aplikacji, przez co platforma jest narażona na pociągnięcie do odpowiedzialności przez podmioty prawne.
+- **Plan walidacji:**
+  - **Co:** Badanie skuteczności wprowadzonego systemu
+  - **Jak:** Badanie statystyczne zgłaszanych postów, ile zostało poprawnie zgłoszony ile false positive. Dodatkowo ankiety satysfakcji dla użytkowników
+  - **Kiedy:** Pierwsze miesiące działalności
+  - **Kto:** Zespół deweloperów
 
 ## 3. Wymagania funkcjonalne
 
@@ -123,6 +155,39 @@ cele biznesowe, cele uzytkownika i kpi??
       - **When:** Kliknę przycisk "Wstaw zdjęcie" oraz wybiorę nagrany film
       - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
       - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
+
+**WF-03**
+
+- **Tytuł:** Rekomendacja postów
+- **Opis:** Algorytmy serwujące użytkownikom kolejne posty wplatając od czasu do casu promowany post
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - Przegląda posty
+  - Chce widzieć posty, które mu się spodobają
+  - Od czasu do czasu zobaczy promowany post lub reklamę
+- **Cel Biznesowy:** Sprzedaż promowanych postów oraz reklam
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Użytkownik kończy przeglądanie postów poprzez wyjście z aplikacji
+- **Kryteria Akceptacji:**
+
+  - **WF-03-A: Algorytm rekomenduje post (Scenariusz Główny)**
+
+    - _Opis:_ Użytkownik przegląda sekcję postów
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty
+      - **When:** Przescrolluję w dół żeby zobaczyć następny post
+      - **Then:** Algorytm wyświetli mi post który mi się spodoba, zostawię reakcję i przejdę dalej
+
+  - **WF-03-B: Algorytm rekomenduje post promowany lub reklamę (Scenariusz Alternatywny)**
+
+    - _Opis:_ W sekcji postów użytkownik widzi post promowany lub reklamę
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty
+      - **When:** Przescrolluję w dół żeby zobaczyć następny post
+      - **Then:** Zostanie mi wyświetlony post promowany lub reklama która mnie zainteresuje
+      - **And:** Kliknę w reklamę lub post promowany aby dowiedzieć się więcej
 
 ### 3.1 Priorytetyzacja Wymagań
 
