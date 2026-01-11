@@ -84,6 +84,20 @@ cele biznesowe, cele uzytkownika i kpi??
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
 
+#### 2.3.3 Ograniczenie biznesowe
+
+- **Ograniczenie:**  
+  Infrastruktura powinna być maksymalnie tania, ale z możliwością skalowania, tak żeby do czasu pierwszych zysków z promowania postów nie wyczerpał się niewielki budżet
+
+- **Źródło:**  
+  Budżet przedsięwzięcia i ocena ryzyka
+
+- **Wpływ na architekturę systemu:**
+
+  - System budowany z myślą o chmurze
+  - Wybór dostawców chmury zawężony do hyperscalerów którzy zapewnią skalowalność
+  - Optymalizacja projektu pod kątem minimalizacji kosztów przetwarzania w chmurze
+
 ### 2.4 Założenia projektowe
 
 #### 2.4.1 Założenia techniczne
