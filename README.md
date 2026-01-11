@@ -105,6 +105,15 @@ Uczelnia
   - **Jak:** Stworzenie skryptu testowego, który dokona konwersji 500 zdjęć - obserwacja obciążenia podczas tego procesu.
   - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
   - **Kto:** Jeden z deweloperów.
+<br>
+
+- **Założenie:** Zakładamy, że projekt będzie realizowany przez studentów w ramach zajęć akademickich oraz utrzymywany na infrastrukturze chmurowej dostępnej w ramach bezpłatnej puli studenckiej Microsoft Azure. W związku z ograniczonym budżetem zakładamy wykorzystanie wyłącznie darmowych lub otwartoźródłowych narzędzi. Zakładamy, że taka konfiguracja będzie wystarczająca dla środowiska testowego i niewielkiej liczby użytkowników(pare studentów).
+- **Ryzyko:** Ograniczone zasoby dostępne w darmowej puli Azure (moc obliczeniowa, pamięć RAM, transfer danych) mogą prowadzić do obniżonej wydajności systemu, dłuższych czasów odpowiedzi aplikacji. Istnieje również ryzyko przekroczenia limitów darmowego planu, co może spowodować wstrzymanie działania serwera lub naliczenie wysokich kosztów.
+- **Plan walidacji:**
+  - **Co:** Sprawdzenie wydajności aplikacji oraz zużycia zasobów w ramach darmowej puli Azure.
+  - **Jak:** Uruchomienie aplikacji w docelowej konfiguracji i przeprowadzenie testów obciążeniowych, symulujących jednoczesne korzystanie z aplikacji przez 50–100 użytkowników. Monitorowanie zużycia CPU, pamięci RAM oraz transferu danych za pomocą Azure Monitor.
+  - **Kiedy:** Po wdrożeniu pierwszej wersji aplikacji na środowisko testowe w chmurze.
+  - **Kto:** Jeden z deweloperów.
 
 ## 3. Wymagania funkcjonalne
 
