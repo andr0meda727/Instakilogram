@@ -156,6 +156,39 @@ cele biznesowe, cele uzytkownika i kpi??
       - **Then:** Przycisk "Opublikuj" pozostanie nieaktywny
       - **And:** Wyświetlony zostanie komunikat o braku możliwości publikacji formatów wideo
 
+**WF-03**
+
+- **Tytuł:** Rekomendacja postów
+- **Opis:** Algorytmy serwujące użytkownikom kolejne posty wplatając od czasu do casu promowany post
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - Przegląda posty
+  - Chce widzieć posty, które mu się spodobają
+  - Od czasu do czasu zobaczy promowany post lub reklamę
+- **Cel Biznesowy:** Sprzedaż promowanych postów oraz reklam
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Użytkownik kończy przeglądanie postów poprzez wyjście z aplikacji
+- **Kryteria Akceptacji:**
+
+  - **WF-03-A: Algorytm rekomenduje post (Scenariusz Główny)**
+
+    - _Opis:_ Użytkownik przegląda sekcję postów
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty
+      - **When:** Przescrolluję w dół żeby zobaczyć następny post
+      - **Then:** Algorytm wyświetli mi post który mi się spodoba, zostawię reakcję i przejdę dalej
+
+  - **WF-03-B: Algorytm rekomenduje post promowany lub reklamę (Scenariusz Alternatywny)**
+
+    - _Opis:_ W sekcji postów użytkownik widzi post promowany lub reklamę
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty
+      - **When:** Przescrolluję w dół żeby zobaczyć następny post
+      - **Then:** Zostanie mi wyświetlony post promowany lub reklama która mnie zainteresuje
+      - **And:** Kliknę w reklamę lub post promowany aby dowiedzieć się więcej
+
 ### 3.1 Priorytetyzacja Wymagań
 
 | ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
