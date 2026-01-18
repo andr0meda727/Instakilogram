@@ -208,6 +208,22 @@ Uczelnia
       - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
       - **And:** Reklama pojawia się na liście aktywnych reklam.
       - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
+ - **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany jako zwykły użytkownik.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca widzie swoje statystyki.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
 
 **WF-03**
 
