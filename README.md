@@ -323,6 +323,36 @@ Uczelnia
       - **And:** Ikona "Serca" zmieni się ponownie na szarą, a komentarz zniknie
       - **And:** Użytkownicy nie widzą mojego polubienia ani komentarza
 
+**WF-06**
+
+- **Tytuł:** Zarządzanie kontem
+- **Opis:** Dostosowywanie oraz personalizacja konta
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - Chce zmienić szczegóły swojego konta
+- **Cel Biznesowy:** Zapwenienie klientom możliwości personalizacji i opcji zarządzania swoim kontem
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Użytkownik dostosowywuje swoje konto według swoich potrzeb
+- **Kryteria Akceptacji:**
+
+  - **WF-06-A: Użytkownik ustawia konto na prywatne (Scenariusz Główny)**
+
+    - _Opis:_ Użytkownik wchodzi w sekcję ustawień
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Klikam przycisk zębatkę
+      - **When:** Wybieram opcję "zmień prywatność konta"
+      - **Then:** Prywatność konta się zmienia
+
+  - **WF-06-B: Użytkownik zmienia zdjęcie profilowe oraz nazwę konta (Scenariusz Alternatywny)**
+
+    - _Opis:_ Użytkownik chce spersonalizować swoje konto
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Klikam przycisk zębatkę
+      - **When:** Wybieram opcję "personalizuj"
+      - **Then:** Wyświetla się formularz personalizacji profilu
+
 
 ### 3.1 Priorytetyzacja Wymagań
 
@@ -347,3 +377,9 @@ alternatywy od aktualnych platform na rynku (sredni)
 
 - Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
 ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
+
+- Wydajność - Działanie natychmiastowe, minimalne opóźnienia podczas przeglądania, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia (średni)
+
+- Niezawodność - Uptime 99,9% lub więcej, zwłaszcza na początku działalności. Każda przerwa techniczna może spowodować utratę potencjalnych użytkowników (wysoki)
+
+- Obserwowalność - Monitororwanie metryk takich jak wyświetlenia, polubienia ale też liczba użytkowników, zaangażowanie itp. Pozyskiwanie danych przydatnych reklamodawcom i w dłuższej perspektywie główne źródło dochodu (wysoki)
