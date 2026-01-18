@@ -208,6 +208,22 @@ Uczelnia
       - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
       - **And:** Reklama pojawia się na liście aktywnych reklam.
       - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
+ - **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany jako zwykły użytkownik.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca widzie swoje statystyki.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
 
 **WF-03**
 
@@ -325,17 +341,51 @@ Uczelnia
 
 **WF-06**
 
+- **Tytuł:** System autentykacji
+- **Opis:** Umożliwia użytkownikom zakładanie konta i logowanie się do niego.
+- **Historyjka Użytkownika:**
+  - Jako nowy użytkownik,
+  - chcę mieć możliwość rejestracji mojego konta
+  - abym mógł wstawiać posty oraz mieć dostęp do aplikacji.
+- **Cel Biznesowy:** Zwiększenie kontroli nad dostępem do aplikacji
+- **Warunki Wstępne:** Użytkownik może wejść na stronę/aplikację i nie jest zalogowany/zarejestrowany.
+- **Warunki Końcowe:** Konto zostaje utworzone lub dostaje informację o braku takiej możliwości
+- **Kryteria Akceptacji:**
+
+  - **WF-06-A: Pomyślne założenie konta (Scenariusz Główny)**
+
+    - _Opis:_ Nowy użytkownik chce się zarejestrować
+    - _Kryteria Akceptacji:_
+      - **Given:** Nie posiadam konta
+      - **And:** Wchodzę na stronę rejestracji
+      - **When:** Kliknę przycisk "zarejestruj" po wypełnieniu danych
+      - **Then:** System tworzy nowe konto
+      - **And:** Dostaję informacje o pomyślnym zalogowaniu
+      - **And:** Przekierowuje mnie do strony głównej
+
+  - **WF-06-B: Próba założenia drugiego konta na ten sam e-mail (Scenariusz Alternatywny)**
+
+    - _Opis:_ System blokuje tworzenie drugiego konta na ten sam adres e-mail
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem na ekranie rejestracji
+      - **And:** Uzupełniam dane i wpisuję ten sam adres e-mail
+      - **When:** Kliknę przycisk "zarejestruj" po wypełnieniu danych
+      - **Then:** Konto nie zostanie utworzone
+      - **And:** Dostanę informację, że taki e-mail jest zajęty
+
+**WF-07**
+
 - **Tytuł:** Zarządzanie kontem
 - **Opis:** Dostosowywanie oraz personalizacja konta
 - **Historyjka Użytkownika:**
   - Jako użytkownik,
   - Chce zmienić szczegóły swojego konta
-- **Cel Biznesowy:** Zapwenienie klientom możliwości personalizacji i opcji zarządzania swoim kontem
+- **Cel Biznesowy:** Zapewnienie klientom możliwości personalizacji i opcji zarządzania swoim kontem
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Użytkownik dostosowywuje swoje konto według swoich potrzeb
 - **Kryteria Akceptacji:**
 
-  - **WF-06-A: Użytkownik ustawia konto na prywatne (Scenariusz Główny)**
+  - **WF-07-A: Użytkownik ustawia konto na prywatne (Scenariusz Główny)**
 
     - _Opis:_ Użytkownik wchodzi w sekcję ustawień
     - _Kryteria Akceptacji:_
@@ -344,7 +394,7 @@ Uczelnia
       - **When:** Wybieram opcję "zmień prywatność konta"
       - **Then:** Prywatność konta się zmienia
 
-  - **WF-06-B: Użytkownik zmienia zdjęcie profilowe oraz nazwę konta (Scenariusz Alternatywny)**
+  - **WF-07-B: Użytkownik zmienia zdjęcie profilowe oraz nazwę konta (Scenariusz Alternatywny)**
 
     - _Opis:_ Użytkownik chce spersonalizować swoje konto
     - _Kryteria Akceptacji:_
@@ -369,6 +419,10 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 ### 4.1. Priorytetyzacja Wymagań
 
+- Kompatybilność – każda osoba powinna mieć dostęp do aplikacji niezależnie od
+tego z jakiego typu urządzenia korzysta. Chcemy łączyć wszystkich. Konfliktem może być
+trudność w implementacji na różne rozdzielczości, inne systemy operacyjne (wysoki)
+
 - Przenośność – istotne jest, aby aplikacja działa na różnych urządzeniach, jeśli ma być
 konkurencyjna. Aktualnie użytkownicy socialmediów korzystają głównie z aplikacji na urządzenia mobilne, dlatego skupimy się najpierw na tym (wysoki)
 
@@ -378,6 +432,13 @@ alternatywy od aktualnych platform na rynku (sredni)
 - Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
 ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
 
+- Reużywalność – raczej nie planujemy większych zmian aplikacji, więc nie ma
+potrzeby dostosowywać rozwiązań projektowych do użycia w innych
+funkcjonalnościach/projektach  (małe)
+
+- Internacjonalizacja – wprowadzenie kilku języków nie jest wymagane do
+podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje
+tłumaczenia, żeby wyjść na rynek zagraniczny (niski)
 - Wydajność - Działanie natychmiastowe, minimalne opóźnienia podczas przeglądania, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia (średni)
 
 - Niezawodność - Uptime 99,9% lub więcej, zwłaszcza na początku działalności. Każda przerwa techniczna może spowodować utratę potencjalnych użytkowników (wysoki)
