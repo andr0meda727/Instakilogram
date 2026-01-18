@@ -408,11 +408,15 @@ Uczelnia
 
 | ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
 | :--------- | :----------------- | :-----: | :--: | :---: | :----: | :-------: | :-----: |
-| **XXX-01** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-02** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-03** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-04** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-05** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ❌    |
+| **WF-01** | Zarządzanie zdjęciami |    21    |  21   |   13   |   5   |   **2,33**   |   ✅    |
+| **WF-02** | Zarządzanie reklamami oraz ich wyświetlanie użytkownikom |    5    |  8   |   3   |   3    |   **2,16**   |   ✅    |
+| **WF-03** | Rekomendacja postów |    13    |  5   |   8   |   13    |   **0,86**   |   ❌    |
+| **WF-04** | Sieć znajomych |    21    |  21   |   8   |   8    |   **2,63**   |   ✅    |
+| **WF-05** | Interakcja z postami |    8    |  5   |   2   |   3    |   **2,6**   |   ✅    |
+| **WF-06** | System autentykacji |    21    |  21   |  3   |   13    |   **2,33**   |   ✅    |
+| **WF-07** | Zarządzanie kontem |    8    |  13   |   3   |   5    |   **2,63**   |   ✅    |
+| **WF-07** | Chat |    3    |  3   |   21   |   13    |   **0,18**   |   ❌    |
+
 
 ## 4. Atrybuty jakościowe
 Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one na zadowolenie użytkowników, co jest kluczowe w aplikacjach społecznośniowych, takich jak **IK**.
