@@ -242,6 +242,43 @@ Uczelnia
       - **Then:** Zostanie mi wyświetlony post promowany lub reklama która mnie zainteresuje
       - **And:** Kliknę w reklamę lub post promowany aby dowiedzieć się więcej
 
+**WF-04**
+
+- **Tytuł:** Sieć znajomych
+- **Opis:** Umożliwia użytkownikom budowanie sieci znajomych poprzez obserwowanie innych kont
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - chcę mieć możliwość obserwacji mojego znajomego
+  - abym mógł obserwować jego nowe posty ze zdjęciami
+- **Cel Biznesowy:** Zwiększenie czasu spędzonego w aplikacji poprzez wyświetlanie użytkowonikom postów znajomych
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Użytkownik obserwuje wybrane konto i wyświetlane mu są posty na stronie głównej z obserwowanego konta
+- **Kryteria Akceptacji:**
+
+  - **WF-01-A: Obserwowanie użytkownika (Scenariusz Główny)**
+
+    - _Opis:_ Zalogowany użytkownik próbuje obserwować wybrane konto
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Korzystam z wyszukiwarki i znajduję interesujące mnie konto po jego nazwie
+      - **When:** Kliknę przycisk "Obserwuj" na wybranym koncie
+      - **Then:** System dodaję wybrane konto do listy moich obserwowanych
+      - **And:** Przycisk "Obserwuj" zmienia się na "Obserwujesz to konto"
+      - **And:** Zdjęcia obserwowanej osoby pojawiają się na mojej stronie głównej
+
+  - **WF-01-B: Odobserwowanie użytkownika (Scenariusz Alternatywny)**
+
+    - _Opis:_ Zalogowany użytkownik chcę usunąć obserwację wybraego konta
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Korzystam z wyszukiwarki lub listy moich obserwowanych, aby wyszukać konto do odobserwowania
+      - **When:** Kliknę przycisk "Obserwujesz to konto"
+      - **Then:** Aplikacja wyświetli popup, w którym użytkownik będzie miał do wyboru opcję "Odobserwuj konto" lub "Anuluj"
+      - **And:** Kliknę przycisk "Odobserwuj konto" 
+      - **And:** System usunie wybrane konto z moich obserwowanych
+      - **And:** Posty od usuniętego konta nie będą się wyświetlać na stronie głównej w zakładce "Znajomi"
+
+
 ### 3.1 Priorytetyzacja Wymagań
 
 | ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
