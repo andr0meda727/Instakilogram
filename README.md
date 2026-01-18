@@ -388,6 +388,10 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 ### 4.1. Priorytetyzacja Wymagań
 
+- Kompatybilność – każda osoba powinna mieć dostęp do aplikacji niezależnie od
+tego z jakiego typu urządzenia korzysta. Chcemy łączyć wszystkich. Konfliktem może być
+trudność w implementacji na różne rozdzielczości, inne systemy operacyjne (wysoki)
+
 - Przenośność – istotne jest, aby aplikacja działa na różnych urządzeniach, jeśli ma być
 konkurencyjna. Aktualnie użytkownicy socialmediów korzystają głównie z aplikacji na urządzenia mobilne, dlatego skupimy się najpierw na tym (wysoki)
 
@@ -396,3 +400,11 @@ alternatywy od aktualnych platform na rynku (sredni)
 
 - Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
 ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
+
+- Reużywalność – raczej nie planujemy większych zmian aplikacji, więc nie ma
+potrzeby dostosowywać rozwiązań projektowych do użycia w innych
+funkcjonalnościach/projektach  (małe)
+
+- Internacjonalizacja – wprowadzenie kilku języków nie jest wymagane do
+podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje
+tłumaczenia, żeby wyjść na rynek zagraniczny (niski)
