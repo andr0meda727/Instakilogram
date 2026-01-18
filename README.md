@@ -339,6 +339,39 @@ Uczelnia
       - **And:** Ikona "Serca" zmieni się ponownie na szarą, a komentarz zniknie
       - **And:** Użytkownicy nie widzą mojego polubienia ani komentarza
 
+**WF-06**
+
+- **Tytuł:** System autentykacji
+- **Opis:** Umożliwia użytkownikom zakładanie konta i logowanie się do niego.
+- **Historyjka Użytkownika:**
+  - Jako nowy użytkownik,
+  - chcę mieć możliwość rejestracji mojego konta
+  - abym mógł wstawiać posty oraz mieć dostęp do aplikacji.
+- **Cel Biznesowy:** Zwiększenie kontroli nad dostępem do aplikacji
+- **Warunki Wstępne:** Użytkownik może wejść na stronę/aplikację i nie jest zalogowany/zarejestrowany.
+- **Warunki Końcowe:** Konto zostaje utworzone lub dostaje informację o braku takiej możliwości
+- **Kryteria Akceptacji:**
+
+  - **WF-06-A: Pomyślne założenie konta (Scenariusz Główny)**
+
+    - _Opis:_ Nowy użytkownik chce się zarejestrować
+    - _Kryteria Akceptacji:_
+      - **Given:** Nie posiadam konta
+      - **And:** Wchodzę na stronę rejestracji
+      - **When:** Kliknę przycisk "zarejestruj" po wypełnieniu danych
+      - **Then:** System tworzy nowe konto
+      - **And:** Dostaję informacje o pomyślnym zalogowaniu
+      - **And:** Przekierowuje mnie do strony głównej
+
+  - **WF-06-B: Próba założenia drugiego konta na ten sam e-mail (Scenariusz Alternatywny)**
+
+    - _Opis:_ System blokuje tworzenie drugiego konta na ten sam adres e-mail
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem na ekranie rejestracji
+      - **And:** Uzupełniam dane i wpisuję ten sam adres e-mail
+      - **When:** Kliknę przycisk "zarejestruj" po wypełnieniu danych
+      - **Then:** Konto nie zostanie utworzone
+      - **And:** Dostanę informację, że taki e-mail jest zajęty
 
 ### 3.1 Priorytetyzacja Wymagań
 
