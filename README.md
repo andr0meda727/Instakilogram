@@ -333,3 +333,17 @@ Uczelnia
 | **XXX-03** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
 | **XXX-04** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
 | **XXX-05** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ❌    |
+
+## 4. Atrybuty jakościowe
+Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one na zadowolenie użytkowników, co jest kluczowe w aplikacjach społecznośniowych, takich jak **IK**.
+
+### 4.1. Priorytetyzacja Wymagań
+
+- Przenośność – istotne jest, aby aplikacja działa na różnych urządzeniach, jeśli ma być
+konkurencyjna. Aktualnie użytkownicy socialmediów korzystają głównie z aplikacji na urządzenia mobilne, dlatego skupimy się najpierw na tym (wysoki)
+
+- Użyteczność – chcemy, aby inferfejs był przejrzysty oraz wolny od rozpraszaczy, co zachęci więcej użytkowników do korzystania z IK jako
+alternatywy od aktualnych platform na rynku (sredni)
+
+- Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
+ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
