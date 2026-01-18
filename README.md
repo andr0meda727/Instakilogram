@@ -377,3 +377,9 @@ alternatywy od aktualnych platform na rynku (sredni)
 
 - Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
 ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
+
+- Wydajność - Działanie natychmiastowe, minimalne opóźnienia podczas przeglądania, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia (średni)
+
+- Niezawodność - Uptime 99,9% lub więcej, zwłaszcza na początku działalności. Każda przerwa techniczna może spowodować utratę potencjalnych użytkowników (wysoki)
+
+- Obserwowalność - Monitororwanie metryk takich jak wyświetlenia, polubienia ale też liczba użytkowników, zaangażowanie itp. Pozyskiwanie danych przydatnych reklamodawcom i w dłuższej perspektywie główne źródło dochodu (wysoki)
