@@ -255,7 +255,7 @@ Uczelnia
 - **Warunki Końcowe:** Użytkownik obserwuje wybrane konto i wyświetlane mu są posty na stronie głównej z obserwowanego konta
 - **Kryteria Akceptacji:**
 
-  - **WF-01-A: Obserwowanie użytkownika (Scenariusz Główny)**
+  - **WF-04-A: Obserwowanie użytkownika (Scenariusz Główny)**
 
     - _Opis:_ Zalogowany użytkownik próbuje obserwować wybrane konto
     - _Kryteria Akceptacji:_
@@ -266,7 +266,7 @@ Uczelnia
       - **And:** Przycisk "Obserwuj" zmienia się na "Obserwujesz to konto"
       - **And:** Zdjęcia obserwowanej osoby pojawiają się na mojej stronie głównej
 
-  - **WF-01-B: Odobserwowanie użytkownika (Scenariusz Alternatywny)**
+  - **WF-04-B: Odobserwowanie użytkownika (Scenariusz Alternatywny)**
 
     - _Opis:_ Zalogowany użytkownik chcę usunąć obserwację wybraego konta
     - _Kryteria Akceptacji:_
@@ -277,6 +277,51 @@ Uczelnia
       - **And:** Kliknę przycisk "Odobserwuj konto" 
       - **And:** System usunie wybrane konto z moich obserwowanych
       - **And:** Posty od usuniętego konta nie będą się wyświetlać na stronie głównej w zakładce "Znajomi"
+
+**WF-05**
+
+- **Tytuł:** Interakcja z postami
+- **Opis:** Umożliwia użytkownikom polubienie postów oraz ich komentowanie
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - chcę mieć możliwość polubienia postu oraz dodania komentarza
+  - abym mógł wyrazić swoje zdanie na temat zdjęcia
+- **Cel Biznesowy:** Zwiększenie wartości sieci znajomych poprzez budowanie więzi między użytkownikami przez interakcję
+- **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
+- **Warunki Końcowe:** Użytkownik polubił post oraz dodał komentarz, który jest widoczny dla innych użytkowników
+- **Kryteria Akceptacji:**
+
+  - **WF-05-A: Polubienie zdjęcia (Scenariusz Główny)**
+
+    - _Opis:_ Zalogowany użytkownik próbuje polubić post
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty na stronie głównej i znajduję ciekawe zdjęcie, które chcę polubić
+      - **When:** Kliknę ikonę "Serca" na wybranym poście
+      - **Then:** System zapisuję moje polubienie
+      - **And:** Użytkownicy mogą zobaczyć kto polubił dany post
+
+  - **WF-05-B: Skomentowanie zdjęcia (Scenariusz Alternatywny)**
+
+    - _Opis:_ Zalogowany użytkownik chcę skomentować wybrany post
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Przeglądam posty na stronie głównej i znajduję ciekawe zdjęcie, które chcę skomentować
+      - **When:** Kliknę ikonę "Komentarza" na wybranym poście
+      - **Then:** Wyświetlą mi się aktualne komentarze innych użytkowników oraz na dole ekranu będe miał możliwość napisania komentarza
+      - **And:** Napisałem komentarz i klikam przycisk "Skomentuj"
+      - **And:** Użytkownicy mogą zobaczyć mój komenatrz
+
+    - **WF-05-C: Usunięcie polubienia i komentarza (Scenariusz Alternatywny)**
+
+    - _Opis:_ Zalogowany użytkownik chcę usunąć dodany komenatrz oraz polubienie
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem oraz skomentowałem i polubiłem post znajomego
+      - **And:** Znajduję post, w którym chcę usunąć komentarz oraz polubienie
+      - **When:** Kliknę podświetloną na czerwono ikonę "Serca" na wybranym poście oraz wejdę w komentarze i kliknę "Usuń" obok mojego komentarza
+      - **Then:** System usunie mój komentarz oraz polubienie
+      - **And:** Ikona "Serca" zmieni się ponownie na szarą, a komentarz zniknie
+      - **And:** Użytkownicy nie widzą mojego polubienia ani komentarza
 
 
 ### 3.1 Priorytetyzacja Wymagań
