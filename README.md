@@ -402,6 +402,15 @@ Uczelnia
       - **And:** Klikam przycisk zębatkę
       - **When:** Wybieram opcję "personalizuj"
       - **Then:** Wyświetla się formularz personalizacji profilu
+  
+  - **WF-07-C: Użytkownik usuwa konto (Scenariusz Alternatywny)**
+
+    - _Opis:_ Użytkownik chce usunąć swój profil
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Klikam przycisk zębatkę
+      - **When:** Wybieram opcję "usuń konto"
+      - **Then:** Wyświetla się formularz usuwania profilu
 
 
 ### 3.1 Priorytetyzacja Wymagań
