@@ -401,6 +401,40 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **When:** Wybieram opcję "usuń konto"
       - **Then:** Wyświetla się formularz usuwania profilu
 
+**WF-08**
+
+- **Tytuł:** Czat między użytkownikami
+- **Opis:** Możliwość wymiany wiadomości pomiędzy znajomymi
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - Chce móc wysłać i odbierać wiadomości prywatne od moich znajomych
+- **Cel Biznesowy:** Zapewnienie klientom możliwości komunikacji z innymi użytkownikami
+- **Warunki Wstępne:** Użytkownik ma kogoś w liście znajomych.
+- **Warunki Końcowe:** Odbiorca otrzymuje wiadomość
+- **Kryteria Akceptacji:**
+  - **WF-08-A: Użytkownik wysyła wiadomość do znajomego (Scenariusz Główny)**
+    - _Opis:_ Użytkownik otwiera czat i wysyła wiadomość
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Wybieram znajomego
+      - **When:** Otwieram czat i wysyłam wiadomość
+      - **Then:** Widzę, że wiadomość została wysłana na czacie.
+
+  - **WF-08-B: Użytkownik odbiera wiadomość od znajomego (Scenariusz Główny)**
+    - _Opis:_ Użytkownik otrzymuje nową wiadomość
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Znajomy wysyła wiadomość
+      - **When:** Otrzymuję wiadomość
+      - **Then:** Wyświetla się powiadomienie o nowej wiadomości i zapisuje się na czacie
+  - **WF-08-C: Użytkownik przegląda historię czatu (Scenariusz Alternatywny)**
+    - _Opis:_ Użytkownik chce zobaczyć wcześniejsze wiadomości
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Kiedyś pisałem ze znajomym
+      - **When:** Otwieram okienko czatu
+      - **Then:** Widzę poprzednie wiadomości
+
 ### 3.1 Priorytetyzacja Wymagań
 
 | ID        | Opis                                                     | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
@@ -412,7 +446,7 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 | **WF-05** | Interakcja z postami                                     |    8    |  5   |   2   |   3    |  **2,6**  |   ✅    |
 | **WF-06** | System autentykacji                                      |   21    |  21  |   3   |   13   | **2,33**  |   ✅    |
 | **WF-07** | Zarządzanie kontem                                       |    8    |  13  |   3   |   5    | **2,63**  |   ✅    |
-| **WF-07** | Chat                                                     |    3    |  3   |  21   |   13   | **0,18**  |   ❌    |
+| **WF-08** | Chat                                                     |    3    |  3   |  21   |   13   | **0,18**  |   ❌    |
 
 ## 4. Atrybuty jakościowe
 
