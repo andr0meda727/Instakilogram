@@ -478,6 +478,17 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
 | **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
 
+**Scenariusz 2: Wieloplatformowość**
+
+| Element           | Opis                                                                                                                                      |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                                                |
+| **Bodziec**       | Publikuję nowe zdjęcie                                                                                  |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
+| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                                                                              |
+| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane |
+| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie                                            |
+
 ### 4.3 Analiza kompromisów architektonicznych
 
 **4.3.1 Użyteczność**
