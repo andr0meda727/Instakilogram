@@ -399,13 +399,40 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 ### 4.1. Priorytetyzacja Wymagań
 
-Atrybut Jakościowy | Opis | Uzasadnienie
-| :--- | :--- | :---
-**Użyteczność** | Jak łatwo korzysta się z aplikacji? | Aplikacja powinna być intuicyjna, żeby nie odstraszać użytkowników skomplikowanym interfejsem. |
-**Wieloplatformowość** | Jak aplikacja działa na różnych systemach operacyjnych? | IK musi posiadać aplikacje natywne na urządzenia mobilne, żeby zachęcić użytkowników do korzystania z niej. Większość użytkowników korzysta z socialmediów z telefonów. |
-**Niezawodność** | Jak często system jest dostępny i działa poprawnie? (np. 99.9% czasu) | Uptime 95% lub więcej, zwłaszcza na początku działalności. Jesteśmy nastawieni na konkretny rynek (Polska), przez co możemy sobie pozwolić na przerwy techniczne w nocy. |
-**Wydajność** | Jak szybko system odpowiada na żądania w określonych warunkach? | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień. |
-**Bezpieczeństwo** | Jak aplikacja chroni prywatność i dane użytkowników? | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
-**Obserwowalność** | Jak łatwo można monitorować statystyki? | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi. |
-**Rozszerzalność**  | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności? | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski) |
-**Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów? | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny |
+| Atrybut Jakościowy      | Opis                                                                  | Uzasadnienie                                                                                                                                                                                                                                                            |
+| :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Użyteczność**         | Jak łatwo korzysta się z aplikacji?                                   | Aplikacja powinna być intuicyjna, żeby nie odstraszać użytkowników skomplikowanym interfejsem.                                                                                                                                                                          |
+| **Wieloplatformowość**  | Jak aplikacja działa na różnych systemach operacyjnych?               | IK musi posiadać aplikacje natywne na urządzenia mobilne, żeby zachęcić użytkowników do korzystania z niej. Większość użytkowników korzysta z socialmediów z telefonów.                                                                                                 |
+| **Niezawodność**        | Jak często system jest dostępny i działa poprawnie? (np. 99.9% czasu) | Uptime 95% lub więcej, zwłaszcza na początku działalności. Jesteśmy nastawieni na konkretny rynek (Polska), przez co możemy sobie pozwolić na przerwy techniczne w nocy.                                                                                                |
+| **Wydajność**           | Jak szybko system odpowiada na żądania w określonych warunkach?       | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień.                                                                                              |
+| **Bezpieczeństwo**      | Jak aplikacja chroni prywatność i dane użytkowników?                  | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
+| **Obserwowalność**      | Jak łatwo można monitorować statystyki?                               | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi.                                                                                                      |
+| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski)                                                                                                                                     |
+| **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
+
+### 4.2. Mierzalna specyfikacja
+
+**Scenariusz 1: Użyteczność**
+
+| Element           | Opis                                                                                                                                      |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                                                |
+| **Bodziec**       | Próbuje opublikować pierwsze zdjęcie oraz krótki opis                                                                                     |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
+| **Środowisko**    | Użytkownik uruchamia aplikację pierwszy raz                                                                                               |
+| **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
+| **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
+
+### 4.3. Analiza kompromisów architektonicznych
+
+**4.3.1. Użyteczność**
+
+- **Cel:** Osiągnięcie czasu publikacji zdjęcia przez nowych użytkowników poniżej 1 minuty.
+- **Możliwe rozwiązanie architektoniczne:** Zaprojektowanie interfejsu w taki sposób, aby w widoku publikacji zdjęcia były zawarte tylko najważniejsze informacje, a zaawansowane opcje były ukryte pod ikoną zębatki.
+- **Kompromis:**
+  - **Pozytywny:**
+    - Interfejs dla użytkowników korzystających z aplikacji pierwszy raz jest czytelny i intuicyjny.
+    - Proces publikacji jest prosty, co powinno zwiększyć liczbę postów w aplikacji.
+  - **Negatywny:**
+    - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
+    - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
