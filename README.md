@@ -444,6 +444,18 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
 | **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
 
+**Scenariusz 3: Niezawodność**
+
+| Element           | Opis       |
+| :---------------- | :--------------------------------------------------------------- |
+| **Źródło bodźca** | Awaria backendu / Przeciążenie serwerów |
+| **Bodziec**       | Serwer przestaje odpowiadać na żądania (timeout > 5s) |
+| **Artefakt**      | Baza danych lub serwery aplikacji |
+| **Środowisko**    | Normalny ruch użytkowników, główny serwer niedostępny |
+| **Reakcja**       | Aplikacja wykrywa awarię i przekierowuje żądania do serwera zastępczego w ciągu 15s |
+| **Miara reakcji** | Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika |
+
+
 ### 4.3 Analiza kompromisów architektonicznych
 
 **4.3.1 Użyteczność**
@@ -457,6 +469,19 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
+
+**4.3.3 Niezawodność**
+
+- **Cel:** Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika
+- **Możliwe rozwiązanie architektoniczne:** Replikacja bazy danych master-slave, kolejkowanie żądań, system automatycznego wykrywania awarii
+- **Kompromis:**
+  - **Pozytywny:**
+    - Ciągłość działania w przypadku awarii pojedynczych modułów
+    - Możliwe przeprowadzanie przerw technicznych na pojedynczych serwerach bez wpływu na użytkowników
+  - **Negatywny:**
+    - Wzrost kosztów chumry w związku z potrzebą utrzymania nowych serwerów
+    - Większa złożoność systemu która utrudni debugowanie i zwiększy czas wdrażania nowych rozwiązań
+    
 
 ## 5. Odkrywanie i Analiza Wymagań
 
