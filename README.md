@@ -36,11 +36,24 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 - Relacje (stories), które znikają po określonym czasie.
 - Edycja zdjęć.
 
-cele biznesowe, cele uzytkownika i kpi??
+**Cele biznesowe:**
+
+- vvvvvvvvvv
+  - Kryterium akceptacji: vvv
+- vvvvvvvvvv
+  - Kryterium akceptacji: vvv
+
+**Cele użytkownika:**
+
+- vvvvvvvvvv
+  - Kryterium akceptacji: vvv
+- vvvvvvvvvv
+  - Kryterium akceptacji: vvv
 
 ### 1.3 Definicje, akronimy i skróty
 
-- IK - instakilogram
+- **IK** - instakilogram
+- **Post** - zdjęcie opublikowane przez użytkownika, mogące zawierać opis. Post może być skomentowany oraz polubiony przez innego użytkownika.
 
 ### 1.4 Przegląd dokumentu
 
@@ -66,6 +79,7 @@ cele biznesowe, cele uzytkownika i kpi??
 - **Konto firmowe**:
   - Możliwość dodania sponsorowanego posta.
   - Prosty panel do wyświetlenia statystyk danego posta.
+
 - **Użytkownik**:
   - Wyświetlanie postów.
   - Publikacja zdjęć
@@ -126,7 +140,7 @@ cele biznesowe, cele uzytkownika i kpi??
   - **Kiedy:** W trakcie implementacji funkcjonalności związanych z publikowaniem zdjęć.
   - **Kto:** Jeden z deweloperów.
 
-#### 2.4.3 Założenia finansowe
+#### 2.4.2 Założenia finansowe
 
 - **Założenie:** Zakładamy, że projekt będzie realizowany przez studentów w ramach zajęć akademickich oraz utrzymywany na infrastrukturze chmurowej dostępnej w ramach bezpłatnej puli studenckiej Microsoft Azure. W związku z ograniczonym budżetem zakładamy wykorzystanie wyłącznie darmowych lub otwartoźródłowych narzędzi. Zakładamy, że taka konfiguracja będzie wystarczająca dla środowiska testowego i niewielkiej liczby użytkowników(pare studentów).
 - **Ryzyko:** Ograniczone zasoby dostępne w darmowej puli Azure (moc obliczeniowa, pamięć RAM, transfer danych) mogą prowadzić do obniżonej wydajności systemu, dłuższych czasów odpowiedzi aplikacji. Istnieje również ryzyko przekroczenia limitów darmowego planu, co może spowodować wstrzymanie działania serwera lub naliczenie wysokich kosztów.
@@ -379,9 +393,7 @@ cele biznesowe, cele uzytkownika i kpi??
       - **And:** Klikam przycisk zębatkę
       - **When:** Wybieram opcję "personalizuj"
       - **Then:** Wyświetla się formularz personalizacji profilu
-  
   - **WF-07-C: Użytkownik usuwa konto (Scenariusz Alternatywny)**
-
     - _Opis:_ Użytkownik chce usunąć swój profil
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -406,7 +418,7 @@ cele biznesowe, cele uzytkownika i kpi??
 
 Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one na zadowolenie użytkowników, co jest kluczowe w aplikacjach społecznośniowych, takich jak **IK**.
 
-### 4.1. Priorytetyzacja Wymagań
+### 4.1 Priorytetyzacja Wymagań
 
 | Atrybut Jakościowy      | Opis                                                                  | Uzasadnienie                                                                                                                                                                                                                                                            |
 | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -419,7 +431,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski)                                                                                                                                     |
 | **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
 
-### 4.2. Mierzalna specyfikacja
+### 4.2 Mierzalna specyfikacja
 
 **Scenariusz 1: Użyteczność**
 
@@ -432,9 +444,9 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
 | **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
 
-### 4.3. Analiza kompromisów architektonicznych
+### 4.3 Analiza kompromisów architektonicznych
 
-**4.3.1. Użyteczność**
+**4.3.1 Użyteczność**
 
 - **Cel:** Osiągnięcie czasu publikacji zdjęcia przez nowych użytkowników poniżej 1 minuty.
 - **Możliwe rozwiązanie architektoniczne:** Zaprojektowanie interfejsu w taki sposób, aby w widoku publikacji zdjęcia były zawarte tylko najważniejsze informacje, a zaawansowane opcje były ukryte pod ikoną zębatki.
@@ -448,11 +460,11 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 ## 5. Odkrywanie i Analiza Wymagań
 
-### 5.1. Analiza Porównawcza
+### 5.1 Analiza Porównawcza
 
 Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji mocnych i słabych stron oraz znalezienia inspiracji do ulepszeń.
 
-- **Krok 1: Identyfikacja Konkurencji/Wzorców:** Podmioty rozwiązujące podobny problem
+- **Identyfikacja Konkurencji/Wzorców:** Podmioty rozwiązujące podobny problem
   - _Konkurencja bezpośrednia:_
     - **Instagram** - największa platforma społecznościowa do udostępnienia zdjęć oraz filmów
     - **BeReal** - aplikacja, która zachęca użytkowników do dzielenia się nieedytowanymi zdjęciami pokazującymi rzeczywistość
@@ -461,14 +473,13 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
   - _Wzorce funkcjonalne:_
     - **XYZ** - vvvvvvvvvvvvvvvvvv
 
-- **Krok 2: Zdefiniowanie Kryteriów Oceny:** Stwórzcie tabelę z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
+- **Zdefiniowanie Kryteriów Oceny:** Tabela z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
   | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
   | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal | 
-  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal | 
-  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal | 
-  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal | 
-  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal | 
+  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal |
+  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal |
+  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal |
+  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal |
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal |
 
-
-- **Krok 3: Synteza Wyników:** Porównajcie zebrane dane, aby odpowiedzieć na pytania: Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują? Wyniki analizy powinny bezpośrednio wpłynąć na treść dokumentu SRS.
+- **Synteza Wyników:** Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują?
