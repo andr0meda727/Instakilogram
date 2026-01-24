@@ -503,6 +503,17 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
     - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
 
+**4.3.1 Wieloplatformowość**
+- **Cel:** Zachowanie spójnego wyglądu oraz funkcjonalności niezależnie od urządzenia z którego korzysta użytkownik.
+- **Możliwe rozwiązanie architektoniczne:** Zastosowanie technik do responsywności takich jak media queries w css. Wykorzystanie jednego formatu zdjęć i ograniczenie maksymalnych wymiarów aby uniknąć rozjeżdżaniu się layoutu.
+- **Kompromis:**
+  - **Pozytywny:**
+    - Interfejs dla użytkowników jest spójny przy zmianie platform.
+    - Proporcje zdjęć do opisów są zachowane, przez co wygląd jest estetyczny.
+  - **Negatywny:**
+    - Ograniczenie rozmiaru może wpłynąć negatywnie przy większych obrazach.
+    - Zwiększamy czas potrzebny do implementacji responsywnych stron.
+
 ## 5. Odkrywanie i Analiza Wymagań
 
 ### 5.1 Analiza Porównawcza
