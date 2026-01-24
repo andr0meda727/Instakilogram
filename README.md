@@ -401,6 +401,40 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **When:** Wybieram opcję "usuń konto"
       - **Then:** Wyświetla się formularz usuwania profilu
 
+**WF-08**
+
+- **Tytuł:** Czat między użytkownikami
+- **Opis:** Możliwość wymiany wiadomości pomiędzy znajomymi
+- **Historyjka Użytkownika:**
+  - Jako użytkownik,
+  - Chce móc wysłać i odbierać wiadomości prywatne od moich znajomych
+- **Cel Biznesowy:** Zapewnienie klientom możliwości komunikacji z innymi użytkownikami
+- **Warunki Wstępne:** Użytkownik ma kogoś w liście znajomych.
+- **Warunki Końcowe:** Odbiorca otrzymuje wiadomość
+- **Kryteria Akceptacji:**
+  - **WF-08-A: Użytkownik wysyła wiadomość do znajomego (Scenariusz Główny)**
+    - _Opis:_ Użytkownik otwiera czat i wysyła wiadomość
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Wybieram znajomego
+      - **When:** Otwieram czat i wysyłam wiadomość
+      - **Then:** Widzę, że wiadomość została wysłana na czacie.
+
+  - **WF-08-B: Użytkownik odbiera wiadomość od znajomego (Scenariusz Główny)**
+    - _Opis:_ Użytkownik otrzymuje nową wiadomość
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Znajomy wysyła wiadomość
+      - **When:** Otrzymuję wiadomość
+      - **Then:** Wyświetla się powiadomienie o nowej wiadomości i zapisuje się na czacie
+  - **WF-08-C: Użytkownik przegląda historię czatu (Scenariusz Alternatywny)**
+    - _Opis:_ Użytkownik chce zobaczyć wcześniejsze wiadomości
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowanym użytkownikiem
+      - **And:** Kiedyś pisałem ze znajomym
+      - **When:** Otwieram okienko czatu
+      - **Then:** Widzę poprzednie wiadomości
+
 ### 3.1 Priorytetyzacja Wymagań
 
 | ID        | Opis                                                     | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
@@ -412,7 +446,7 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 | **WF-05** | Interakcja z postami                                     |    8    |  5   |   2   |   3    |  **2,6**  |   ✅    |
 | **WF-06** | System autentykacji                                      |   21    |  21  |   3   |   13   | **2,33**  |   ✅    |
 | **WF-07** | Zarządzanie kontem                                       |    8    |  13  |   3   |   5    | **2,63**  |   ✅    |
-| **WF-07** | Chat                                                     |    3    |  3   |  21   |   13   | **0,18**  |   ❌    |
+| **WF-08** | Chat                                                     |    3    |  3   |  21   |   13   | **0,18**  |   ❌    |
 
 ## 4. Atrybuty jakościowe
 
@@ -444,6 +478,17 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
 | **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
 
+**Scenariusz 2: Wieloplatformowość**
+
+| Element           | Opis                                                                                                                                      |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                                                |
+| **Bodziec**       | Publikuję nowe zdjęcie                                                                                  |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
+| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                                                                              |
+| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane |
+| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie                                            |
+
 **Scenariusz 3: Niezawodność**
 
 | Element           | Opis       |
@@ -470,6 +515,17 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
     - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
 
+**4.3.2 Wieloplatformowość**
+- **Cel:** Zachowanie spójnego wyglądu oraz funkcjonalności niezależnie od urządzenia z którego korzysta użytkownik.
+- **Możliwe rozwiązanie architektoniczne:** Zastosowanie technik do responsywności takich jak media queries w css. Wykorzystanie jednego formatu zdjęć i ograniczenie maksymalnych wymiarów aby uniknąć rozjeżdżaniu się layoutu.
+- **Kompromis:**
+  - **Pozytywny:**
+    - Interfejs dla użytkowników jest spójny przy zmianie platform.
+    - Proporcje zdjęć do opisów są zachowane, przez co wygląd jest estetyczny.
+  - **Negatywny:**
+    - Ograniczenie rozmiaru może wpłynąć negatywnie przy większych obrazach.
+    - Zwiększamy czas potrzebny do implementacji responsywnych stron.
+ 
 **4.3.3 Niezawodność**
 
 - **Cel:** Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika
