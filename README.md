@@ -436,3 +436,30 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
+
+## 5. Odkrywanie i Analiza Wymagań
+
+### 5.1. Analiza Porównawcza
+
+Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji mocnych i słabych stron oraz znalezienia inspiracji do ulepszeń.
+
+- **Krok 1: Identyfikacja Konkurencji/Wzorców:** Podmioty rozwiązujące podobny problem
+  - _Konkurencja bezpośrednia:_
+    - **Instagram** - największa platforma społecznościowa do udostępnienia zdjęć oraz filmów
+    - **BeReal** - aplikacja, która zachęca użytkowników do dzielenia się nieedytowanymi zdjęciami pokazującymi rzeczywistość
+  - _Konkurencja pośrednia:_
+    - **XYZ** - vvvvvvvvvvvvvvvvvv
+  - _Wzorce funkcjonalne:_
+    - **XYZ** - vvvvvvvvvvvvvvvvvv
+
+- **Krok 2: Zdefiniowanie Kryteriów Oceny:** Stwórzcie tabelę z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
+  | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
+  | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
+  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal | 
+  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal | 
+  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal | 
+  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal | 
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal | 
+
+
+- **Krok 3: Synteza Wyników:** Porównajcie zebrane dane, aby odpowiedzieć na pytania: Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują? Wyniki analizy powinny bezpośrednio wpłynąć na treść dokumentu SRS.
