@@ -379,9 +379,7 @@ cele biznesowe, cele uzytkownika i kpi??
       - **And:** Klikam przycisk zębatkę
       - **When:** Wybieram opcję "personalizuj"
       - **Then:** Wyświetla się formularz personalizacji profilu
-  
   - **WF-07-C: Użytkownik usuwa konto (Scenariusz Alternatywny)**
-
     - _Opis:_ Użytkownik chce usunąć swój profil
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -464,11 +462,10 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
 - **Krok 2: Zdefiniowanie Kryteriów Oceny:** Stwórzcie tabelę z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
   | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
   | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal | 
-  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal | 
-  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal | 
-  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal | 
-  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal | 
-
+  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal |
+  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal |
+  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal |
+  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal |
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal |
 
 - **Krok 3: Synteza Wyników:** Porównajcie zebrane dane, aby odpowiedzieć na pytania: Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują? Wyniki analizy powinny bezpośrednio wpłynąć na treść dokumentu SRS.
