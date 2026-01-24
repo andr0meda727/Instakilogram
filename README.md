@@ -481,6 +481,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Wzrost kosztów chumry w związku z potrzebą utrzymania nowych serwerów
     - Większa złożoność systemu która utrudni debugowanie i zwiększy czas wdrażania nowych rozwiązań
+    
 
 ## 5. Odkrywanie i Analiza Wymagań
 
