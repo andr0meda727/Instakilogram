@@ -64,9 +64,8 @@ cele biznesowe, cele uzytkownika i kpi??
   - Zarządzanie użytkownikami, administrator posiada możliwość wyciszenia użytkownika na określony czas lub blokady jego konta.
 
 - **Konto firmowe**:
-    - Możliwość dodania sponsorowanego posta.
-    - Prosty panel do wyświetlenia statystyk danego posta.
-    
+  - Możliwość dodania sponsorowanego posta.
+  - Prosty panel do wyświetlenia statystyk danego posta.
 - **Użytkownik**:
   - Wyświetlanie postów.
   - Publikacja zdjęć
@@ -84,26 +83,23 @@ cele biznesowe, cele uzytkownika i kpi??
   Prawo Unii Europejskiej.
 
 - **Wpływ na architekturę systemu:**
-
   - Drastycznie zawęża wybór dostawców usług chmurowych do tych, którzy posiadają centra danych w EOG.
   - Wymusza implementację mechanizmów do obsługi praw użytkowników (prawo do bycia zapomnianym, prawo do eksportu danych), co musi być uwzględnione w projekcie bazy danych i API.
   - Narzuca konieczność anonimizacji danych w środowiskach deweloperskich i testowych.
   - System umożliwia zmianę prywatności konta, przez co zdjęcia są widoczne tylko dla obserwujących (Privary by Design).
 
-
 #### 2.3.2 Ograniczenia środowiskowe
+
 - **Ograniczenie:**  
-System musi być zaprojektowany przy użyciu narzędzi i sposobów poznanych na uczelni. Spełniać założenia przedmiotu na którym będzie oceniany projekt
+  System musi być zaprojektowany przy użyciu narzędzi i sposobów poznanych na uczelni. Spełniać założenia przedmiotu na którym będzie oceniany projekt
 
 - **Źródło:**  
-Uczelnia
+  Uczelnia
 
 - **Wpływ na architekturę systemu:**
-
-    - Ogranicza czas, który może zostać poświęcony na projektowanie systemu.
-    - Zawęża funkcjonalności do najprostszych.
-    - Narzuca pracę w 3-osobowym zespole studentów.
-
+  - Ogranicza czas, który może zostać poświęcony na projektowanie systemu.
+  - Zawęża funkcjonalności do najprostszych.
+  - Narzuca pracę w 3-osobowym zespole studentów.
 
 #### 2.3.3 Ograniczenie biznesowe
 
@@ -114,7 +110,6 @@ Uczelnia
   Budżet przedsięwzięcia i ocena ryzyka
 
 - **Wpływ na architekturę systemu:**
-
   - System budowany z myślą o chmurze
   - Wybór dostawców chmury zawężony do hyperscalerów którzy zapewnią skalowalność
   - Optymalizacja projektu pod kątem minimalizacji kosztów przetwarzania w chmurze
@@ -143,7 +138,7 @@ Uczelnia
 
 #### 2.4.3 Założenia prawno-techniczne
 
-- **Założenie:** Zakładamy że do moderacji treści wystarczy minimalistyczny sytem polegający na systemie zgłaszania niepoprawnych treści przez użytkowników. 
+- **Założenie:** Zakładamy że do moderacji treści wystarczy minimalistyczny sytem polegający na systemie zgłaszania niepoprawnych treści przez użytkowników.
 - **Ryzyko:** Użytkownicy nie będą zgłaszać treści naruszających regulamin aplikacji, przez co platforma jest narażona na pociągnięcie do odpowiedzialności przez podmioty prawne.
 - **Plan walidacji:**
   - **Co:** Badanie skuteczności wprowadzonego systemu
@@ -165,9 +160,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Zdjęcie użytkownika zostaje opublikowane, oraz ma on możliwość edycji jego opisu, jak i usunięcia zdjęcia.
 - **Kryteria Akceptacji:**
-
   - **WF-01-A: Pomyślne opublikowanie zdjęcia (Scenariusz Główny)**
-
     - _Opis:_ Zalogowany użytkownik próbuje opublikować zdjęcie
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -178,7 +171,6 @@ Uczelnia
       - **And:** Post ze zdjęciem wyświetli się na stronie głównej moich obserwujących.
 
   - **WF-01-B: Próba przesłania formatu wideo (Scenariusz Alternatywny)**
-
     - _Opis:_ Aplikacja uniemożliwia opublikowanie formatu wideo
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -208,22 +200,22 @@ Uczelnia
       - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
       - **And:** Reklama pojawia się na liście aktywnych reklam.
       - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
- - **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-    - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
-    - _Kryteria Akceptacji:_
-      - **Given:** Jestem zalogowany jako zwykły użytkownik.
-      - **And:** Dostępne są posty na stronie głównej.
-      - **When:** Przewijam kilka postó.
-      - **Then:** Widzę post sponsorowany.
-      - **And:** Post jest oznaczony jako sponsorowany.
-  - **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-    - _Opis:_ Reklamodawca widzie swoje statystyki.
-    - _Kryteria Akceptacji:_
-      - **Given:** Jestem zalogowany na konto firmowe.
-      - **And:** Dostępne są posty na stronie głównej.
-      - **When:** Przewijam kilka postó.
-      - **Then:** Widzę post sponsorowany.
-      - **And:** Post jest oznaczony jako sponsorowany.
+- **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+  - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
+  - _Kryteria Akceptacji:_
+    - **Given:** Jestem zalogowany jako zwykły użytkownik.
+    - **And:** Dostępne są posty na stronie głównej.
+    - **When:** Przewijam kilka postó.
+    - **Then:** Widzę post sponsorowany.
+    - **And:** Post jest oznaczony jako sponsorowany.
+- **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+  - _Opis:_ Reklamodawca widzie swoje statystyki.
+  - _Kryteria Akceptacji:_
+    - **Given:** Jestem zalogowany na konto firmowe.
+    - **And:** Dostępne są posty na stronie głównej.
+    - **When:** Przewijam kilka postó.
+    - **Then:** Widzę post sponsorowany.
+    - **And:** Post jest oznaczony jako sponsorowany.
 
 **WF-03**
 
@@ -238,9 +230,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Użytkownik kończy przeglądanie postów poprzez wyjście z aplikacji
 - **Kryteria Akceptacji:**
-
   - **WF-03-A: Algorytm rekomenduje post (Scenariusz Główny)**
-
     - _Opis:_ Użytkownik przegląda sekcję postów
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -249,7 +239,6 @@ Uczelnia
       - **Then:** Algorytm wyświetli mi post który mi się spodoba, zostawię reakcję i przejdę dalej
 
   - **WF-03-B: Algorytm rekomenduje post promowany lub reklamę (Scenariusz Alternatywny)**
-
     - _Opis:_ W sekcji postów użytkownik widzi post promowany lub reklamę
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -270,9 +259,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Użytkownik obserwuje wybrane konto i wyświetlane mu są posty na stronie głównej z obserwowanego konta
 - **Kryteria Akceptacji:**
-
   - **WF-04-A: Obserwowanie użytkownika (Scenariusz Główny)**
-
     - _Opis:_ Zalogowany użytkownik próbuje obserwować wybrane konto
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -283,14 +270,13 @@ Uczelnia
       - **And:** Zdjęcia obserwowanej osoby pojawiają się na mojej stronie głównej
 
   - **WF-04-B: Odobserwowanie użytkownika (Scenariusz Alternatywny)**
-
     - _Opis:_ Zalogowany użytkownik chcę usunąć obserwację wybraego konta
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
       - **And:** Korzystam z wyszukiwarki lub listy moich obserwowanych, aby wyszukać konto do odobserwowania
       - **When:** Kliknę przycisk "Obserwujesz to konto"
       - **Then:** Aplikacja wyświetli popup, w którym użytkownik będzie miał do wyboru opcję "Odobserwuj konto" lub "Anuluj"
-      - **And:** Kliknę przycisk "Odobserwuj konto" 
+      - **And:** Kliknę przycisk "Odobserwuj konto"
       - **And:** System usunie wybrane konto z moich obserwowanych
       - **And:** Posty od usuniętego konta nie będą się wyświetlać na stronie głównej w zakładce "Znajomi"
 
@@ -306,9 +292,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Użytkownik polubił post oraz dodał komentarz, który jest widoczny dla innych użytkowników
 - **Kryteria Akceptacji:**
-
   - **WF-05-A: Polubienie zdjęcia (Scenariusz Główny)**
-
     - _Opis:_ Zalogowany użytkownik próbuje polubić post
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -318,7 +302,6 @@ Uczelnia
       - **And:** Użytkownicy mogą zobaczyć kto polubił dany post
 
   - **WF-05-B: Skomentowanie zdjęcia (Scenariusz Alternatywny)**
-
     - _Opis:_ Zalogowany użytkownik chcę skomentować wybrany post
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -351,9 +334,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik może wejść na stronę/aplikację i nie jest zalogowany/zarejestrowany.
 - **Warunki Końcowe:** Konto zostaje utworzone lub dostaje informację o braku takiej możliwości
 - **Kryteria Akceptacji:**
-
   - **WF-06-A: Pomyślne założenie konta (Scenariusz Główny)**
-
     - _Opis:_ Nowy użytkownik chce się zarejestrować
     - _Kryteria Akceptacji:_
       - **Given:** Nie posiadam konta
@@ -364,7 +345,6 @@ Uczelnia
       - **And:** Przekierowuje mnie do strony głównej
 
   - **WF-06-B: Próba założenia drugiego konta na ten sam e-mail (Scenariusz Alternatywny)**
-
     - _Opis:_ System blokuje tworzenie drugiego konta na ten sam adres e-mail
     - _Kryteria Akceptacji:_
       - **Given:** Jestem na ekranie rejestracji
@@ -384,9 +364,7 @@ Uczelnia
 - **Warunki Wstępne:** Użytkownik jest zalogowany w aplikacji.
 - **Warunki Końcowe:** Użytkownik dostosowywuje swoje konto według swoich potrzeb
 - **Kryteria Akceptacji:**
-
   - **WF-07-A: Użytkownik ustawia konto na prywatne (Scenariusz Główny)**
-
     - _Opis:_ Użytkownik wchodzi w sekcję ustawień
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -395,7 +373,6 @@ Uczelnia
       - **Then:** Prywatność konta się zmienia
 
   - **WF-07-B: Użytkownik zmienia zdjęcie profilowe oraz nazwę konta (Scenariusz Alternatywny)**
-
     - _Opis:_ Użytkownik chce spersonalizować swoje konto
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem
@@ -412,44 +389,86 @@ Uczelnia
       - **When:** Wybieram opcję "usuń konto"
       - **Then:** Wyświetla się formularz usuwania profilu
 
-
 ### 3.1 Priorytetyzacja Wymagań
 
-| ID         | Opis               | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
-| :--------- | :----------------- | :-----: | :--: | :---: | :----: | :-------: | :-----: |
-| **XXX-01** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-02** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-03** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-04** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ✅    |
-| **XXX-05** | vvvvvvvvvvvvvvvvvv |    0    |  0   |   0   |   0    |   **0**   |   ❌    |
+| ID        | Opis                                                     | Korzyść | Kara | Koszt | Ryzyko | **Wynik** | **MVP** |
+| :-------- | :------------------------------------------------------- | :-----: | :--: | :---: | :----: | :-------: | :-----: |
+| **WF-01** | Zarządzanie zdjęciami                                    |   21    |  21  |  13   |   5    | **2,33**  |   ✅    |
+| **WF-02** | Zarządzanie reklamami oraz ich wyświetlanie użytkownikom |    5    |  8   |   3   |   3    | **2,16**  |   ✅    |
+| **WF-03** | Rekomendacja postów                                      |   13    |  5   |   8   |   13   | **0,86**  |   ❌    |
+| **WF-04** | Sieć znajomych                                           |   21    |  21  |   8   |   8    | **2,63**  |   ✅    |
+| **WF-05** | Interakcja z postami                                     |    8    |  5   |   2   |   3    |  **2,6**  |   ✅    |
+| **WF-06** | System autentykacji                                      |   21    |  21  |   3   |   13   | **2,33**  |   ✅    |
+| **WF-07** | Zarządzanie kontem                                       |    8    |  13  |   3   |   5    | **2,63**  |   ✅    |
+| **WF-07** | Chat                                                     |    3    |  3   |  21   |   13   | **0,18**  |   ❌    |
 
 ## 4. Atrybuty jakościowe
+
 Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one na zadowolenie użytkowników, co jest kluczowe w aplikacjach społecznośniowych, takich jak **IK**.
 
 ### 4.1. Priorytetyzacja Wymagań
 
-- Kompatybilność – każda osoba powinna mieć dostęp do aplikacji niezależnie od
-tego z jakiego typu urządzenia korzysta. Chcemy łączyć wszystkich. Konfliktem może być
-trudność w implementacji na różne rozdzielczości, inne systemy operacyjne (wysoki)
+| Atrybut Jakościowy      | Opis                                                                  | Uzasadnienie                                                                                                                                                                                                                                                            |
+| :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Użyteczność**         | Jak łatwo korzysta się z aplikacji?                                   | Aplikacja powinna być intuicyjna, żeby nie odstraszać użytkowników skomplikowanym interfejsem.                                                                                                                                                                          |
+| **Wieloplatformowość**  | Jak aplikacja działa na różnych systemach operacyjnych?               | IK musi posiadać aplikacje natywne na urządzenia mobilne, żeby zachęcić użytkowników do korzystania z niej. Większość użytkowników korzysta z socialmediów z telefonów.                                                                                                 |
+| **Niezawodność**        | Jak często system jest dostępny i działa poprawnie? (np. 99.9% czasu) | Uptime 95% lub więcej, zwłaszcza na początku działalności. Jesteśmy nastawieni na konkretny rynek (Polska), przez co możemy sobie pozwolić na przerwy techniczne w nocy.                                                                                                |
+| **Wydajność**           | Jak szybko system odpowiada na żądania w określonych warunkach?       | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień.                                                                                              |
+| **Bezpieczeństwo**      | Jak aplikacja chroni prywatność i dane użytkowników?                  | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
+| **Obserwowalność**      | Jak łatwo można monitorować statystyki?                               | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi.                                                                                                      |
+| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski)                                                                                                                                     |
+| **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
 
-- Przenośność – istotne jest, aby aplikacja działa na różnych urządzeniach, jeśli ma być
-konkurencyjna. Aktualnie użytkownicy socialmediów korzystają głównie z aplikacji na urządzenia mobilne, dlatego skupimy się najpierw na tym (wysoki)
+### 4.2. Mierzalna specyfikacja
 
-- Użyteczność – chcemy, aby inferfejs był przejrzysty oraz wolny od rozpraszaczy, co zachęci więcej użytkowników do korzystania z IK jako
-alternatywy od aktualnych platform na rynku (sredni)
+**Scenariusz 1: Użyteczność**
 
-- Rozszerzalność – dodawanie nowych funkcjonalności nie będzie naszym priorytetem,
-ze względu na to, że chcemy ograniczać niepotrzebne funkcjonalności (niski)
+| Element           | Opis                                                                                                                                      |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                                                |
+| **Bodziec**       | Próbuje opublikować pierwsze zdjęcie oraz krótki opis                                                                                     |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
+| **Środowisko**    | Użytkownik uruchamia aplikację pierwszy raz                                                                                               |
+| **Reakcja**       | System prosi użytkownika o zalogowanie się na konto, a następnie prowadzi go przez proces publikacji postu (wybór zdjęcia, dodanie opisu) |
+| **Miara reakcji** | Czas potrzebny do opublikowania zdjęcia po założeniu konta powinien wynieść poniżej 1 minuty.                                             |
 
-- Reużywalność – raczej nie planujemy większych zmian aplikacji, więc nie ma
-potrzeby dostosowywać rozwiązań projektowych do użycia w innych
-funkcjonalnościach/projektach  (małe)
+### 4.3. Analiza kompromisów architektonicznych
 
-- Internacjonalizacja – wprowadzenie kilku języków nie jest wymagane do
-podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje
-tłumaczenia, żeby wyjść na rynek zagraniczny (niski)
-- Wydajność - Działanie natychmiastowe, minimalne opóźnienia podczas przeglądania, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia (średni)
+**4.3.1. Użyteczność**
 
-- Niezawodność - Uptime 99,9% lub więcej, zwłaszcza na początku działalności. Każda przerwa techniczna może spowodować utratę potencjalnych użytkowników (wysoki)
+- **Cel:** Osiągnięcie czasu publikacji zdjęcia przez nowych użytkowników poniżej 1 minuty.
+- **Możliwe rozwiązanie architektoniczne:** Zaprojektowanie interfejsu w taki sposób, aby w widoku publikacji zdjęcia były zawarte tylko najważniejsze informacje, a zaawansowane opcje były ukryte pod ikoną zębatki.
+- **Kompromis:**
+  - **Pozytywny:**
+    - Interfejs dla użytkowników korzystających z aplikacji pierwszy raz jest czytelny i intuicyjny.
+    - Proces publikacji jest prosty, co powinno zwiększyć liczbę postów w aplikacji.
+  - **Negatywny:**
+    - Użytkownicy wymagający bardziej zaawansowanych opcji mogą mieć problem z ich znalezieniem.
+    - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
 
-- Obserwowalność - Monitororwanie metryk takich jak wyświetlenia, polubienia ale też liczba użytkowników, zaangażowanie itp. Pozyskiwanie danych przydatnych reklamodawcom i w dłuższej perspektywie główne źródło dochodu (wysoki)
+## 5. Odkrywanie i Analiza Wymagań
+
+### 5.1. Analiza Porównawcza
+
+Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji mocnych i słabych stron oraz znalezienia inspiracji do ulepszeń.
+
+- **Krok 1: Identyfikacja Konkurencji/Wzorców:** Podmioty rozwiązujące podobny problem
+  - _Konkurencja bezpośrednia:_
+    - **Instagram** - największa platforma społecznościowa do udostępnienia zdjęć oraz filmów
+    - **BeReal** - aplikacja, która zachęca użytkowników do dzielenia się nieedytowanymi zdjęciami pokazującymi rzeczywistość
+  - _Konkurencja pośrednia:_
+    - **XYZ** - vvvvvvvvvvvvvvvvvv
+  - _Wzorce funkcjonalne:_
+    - **XYZ** - vvvvvvvvvvvvvvvvvv
+
+- **Krok 2: Zdefiniowanie Kryteriów Oceny:** Stwórzcie tabelę z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
+  | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
+  | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
+  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal | 
+  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal | 
+  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal | 
+  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal | 
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal | 
+
+
+- **Krok 3: Synteza Wyników:** Porównajcie zebrane dane, aby odpowiedzieć na pytania: Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują? Wyniki analizy powinny bezpośrednio wpłynąć na treść dokumentu SRS.
