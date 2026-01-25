@@ -38,10 +38,17 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 
 **Cele biznesowe:**
 
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
+- Zbudowanie bazy użytkowników zmęczonych aktualnymi social mediami
+  - Kryterium akceptacji: Osiągnięcie 1000 aktywnych użytkowników w ciągu pierwszych 6 miesięcy od wypuszczenia wersji MVP.
+- Minimalizacja kosztów utrzymania infrastruktury
+  - Kryterium akceptacji: Miesięczny koszt utrzymania aplikacji nie przekracza 100 zł przez pierwsze 6 miesięcy
+- Pozyskanie klientów chcących reklamować swoje usługi poprzez posty sponsorowane
+  - Kryterium akceptacji: Osiągniecie co najmniej 2 aktywnych kont firmowych, które opublikowały minimum 1 post sponsorowany w ciągu pierwszych 3 miesięcy od wersji MVP.
+- Architektura systemu umożliwiająca szybkie naprawy
+  - Kryterium akceptacji: Średni czas naprawy błędu (MTTR) nie przekracza 15 minut
+- Weryfikacja narzędzia FFmpeg do przetwarzania zdjęć
+  - Kryterium akceptacji: Średni koszt przechowywania 1000 zdjęć po optymalizacji jest o co najmniej 40% niższy niż w przypadku plików surowych.
+
 
 **Cele użytkownika:**
 
@@ -52,12 +59,18 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 
 ### 1.3 Definicje, akronimy i skróty
 
-- **IK** - instakilogram
+- **IK** - Instakilogram
 - **Post** - zdjęcie opublikowane przez użytkownika, mogące zawierać opis. Post może być skomentowany oraz polubiony przez innego użytkownika.
 - **MTTR** (Mean Time To Repair) - wskaźnik mierzący średni czas potrzebny na naprawę usterki i przywrócenie sprawności systemu.
 - **EOG** - (Europejski Obszar Gospodarczy) - strefa obejmująca państwa UE oraz Islandię, Liechtenstein i Norwegię.
 
 ### 1.4 Przegląd dokumentu
+
+- **[Rozdział 1 (Wstęp)](#1-wstęp):** Cel aplikacji, wizja produktu oraz cele biznesowe i użytkownika
+- **[Rozdział 2 (Opis ogólny)](#2-opis-ogólny):** Zestawienie głównych funkcji aplikacji, klasy użytkowników, ograniczenia oraz założenia projektowe
+- **[Rozdział 3 (Wymagania funkcjonalne)](#3-wymagania-funkcjonalne):** Szczegółowy opis funkcjonalności w formacie User Stories
+- **[Rozdział 4 (Atrybuty jakościowe)](#4-atrybuty-jakościowe):** Określenie atrybutów jakościowych systemu, takich jak użyteczność czy bezpieczeństwo
+- **[Rozdział 5 (Odkrywanie i Analiza Wymagań)](#5-odkrywanie-i-analiza-wymagań):** Analiza porównawcza z rynkowymi wzorcami
 
 ## 2. Opis ogólny
 
@@ -216,22 +229,22 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
       - **And:** Reklama pojawia się na liście aktywnych reklam.
       - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
-- **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-  - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
-  - _Kryteria Akceptacji:_
-    - **Given:** Jestem zalogowany jako zwykły użytkownik.
-    - **And:** Dostępne są posty na stronie głównej.
-    - **When:** Przewijam kilka postó.
-    - **Then:** Widzę post sponsorowany.
-    - **And:** Post jest oznaczony jako sponsorowany.
-- **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-  - _Opis:_ Reklamodawca widzie swoje statystyki.
-  - _Kryteria Akceptacji:_
-    - **Given:** Jestem zalogowany na konto firmowe.
-    - **And:** Dostępne są posty na stronie głównej.
-    - **When:** Przewijam kilka postó.
-    - **Then:** Widzę post sponsorowany.
-    - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Użytkownik widzi reklamy na stronie głównej.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany jako zwykły użytkownik.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postów.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca widzi swoje statystyki.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
 
 **WF-03**
 
@@ -327,8 +340,7 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **And:** Napisałem komentarz i klikam przycisk "Skomentuj"
       - **And:** Użytkownicy mogą zobaczyć mój komenatrz
 
-    - **WF-05-C: Usunięcie polubienia i komentarza (Scenariusz Alternatywny)**
-
+  - **WF-05-C: Usunięcie polubienia i komentarza (Scenariusz Alternatywny)**
     - _Opis:_ Zalogowany użytkownik chcę usunąć dodany komenatrz oraz polubienie
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem oraz skomentowałem i polubiłem post znajomego
@@ -464,7 +476,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Wydajność**           | Jak szybko system odpowiada na żądania w określonych warunkach?       | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień.                                                                                              |
 | **Bezpieczeństwo**      | Jak aplikacja chroni prywatność i dane użytkowników?                  | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
 | **Obserwowalność**      | Jak łatwo można monitorować statystyki?                               | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi.                                                                                                      |
-| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje                                                                                                                                      |
+| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje                                                                                                                                             |
 | **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
 
 ### 4.2 Mierzalna specyfikacja
@@ -482,26 +494,25 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 **Scenariusz 2: Wieloplatformowość**
 
-| Element           | Opis                                                                                                                                      |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Źródło bodźca** | Użytkownik                                                                                                                                |
-| **Bodziec**       | Publikuję nowe zdjęcie                                                                                  |
-| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
-| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                                                                              |
-| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane |
-| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie                                            |
+| Element           | Opis                                                                                                              |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                        |
+| **Bodziec**       | Publikuję nowe zdjęcie                                                                                            |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                         |
+| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                 |
+| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane                                             |
+| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie |
 
 **Scenariusz 3: Niezawodność**
 
-| Element           | Opis       |
-| :---------------- | :--------------------------------------------------------------- |
-| **Źródło bodźca** | Awaria backendu / Przeciążenie serwerów |
-| **Bodziec**       | Serwer przestaje odpowiadać na żądania (timeout > 5s) |
-| **Artefakt**      | Baza danych lub serwery aplikacji |
-| **Środowisko**    | Normalny ruch użytkowników, główny serwer niedostępny |
-| **Reakcja**       | Aplikacja wykrywa awarię i przekierowuje żądania do serwera zastępczego w ciągu 15s |
+| Element           | Opis                                                                                        |
+| :---------------- | :------------------------------------------------------------------------------------------ |
+| **Źródło bodźca** | Awaria backendu / Przeciążenie serwerów                                                     |
+| **Bodziec**       | Serwer przestaje odpowiadać na żądania (timeout > 5s)                                       |
+| **Artefakt**      | Baza danych lub serwery aplikacji                                                           |
+| **Środowisko**    | Normalny ruch użytkowników, główny serwer niedostępny                                       |
+| **Reakcja**       | Aplikacja wykrywa awarię i przekierowuje żądania do serwera zastępczego w ciągu 15s         |
 | **Miara reakcji** | Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika |
-
 
 ### 4.3 Analiza kompromisów architektonicznych
 
@@ -518,6 +529,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
 
 **4.3.2 Wieloplatformowość**
+
 - **Cel:** Zachowanie spójnego wyglądu oraz funkcjonalności niezależnie od urządzenia z którego korzysta użytkownik.
 - **Możliwe rozwiązanie architektoniczne:** Zastosowanie technik do responsywności takich jak media queries w css. Wykorzystanie jednego formatu zdjęć i ograniczenie maksymalnych wymiarów aby uniknąć rozjeżdżaniu się layoutu.
 - **Kompromis:**
@@ -527,7 +539,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Ograniczenie rozmiaru może wpłynąć negatywnie przy większych obrazach.
     - Zwiększamy czas potrzebny do implementacji responsywnych stron.
- 
+
 **4.3.3 Niezawodność**
 
 - **Cel:** Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika
@@ -539,7 +551,6 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Wzrost kosztów chumry w związku z potrzebą utrzymania nowych serwerów
     - Większa złożoność systemu która utrudni debugowanie i zwiększy czas wdrażania nowych rozwiązań
-    
 
 ## 5. Odkrywanie i Analiza Wymagań
 
@@ -569,7 +580,6 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
   | **Wsparcie** | Dostępność wsparcia dla użytkowników | Moderacja przez administratrorów, system zgłaszania treści przez użytkowników | Centra pomocy, automatyczna moderacja | System zgłaszania treści przez użytkowników |
   | **Prywatność i dane** | Ochrona danych osobowych | Zgodność z RODO, dane przechowywane na serwerach w EOG | Przetwarzanie globalne, agresywne przetwarzanie danych | Przetwarzanie globalne, mniejszy zakres zbieranych danych |
 
-
 - **Synteza Wyników:**
   - **Silne punkty konkurencji oraz ich unikalne funkcje:**
     - Wysoki poziom retencji użytkowników przez uzależniające treści (Instagram)
@@ -587,7 +597,3 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
     - Nasza aplikacja skupia się przede wszystkim na redukcji elementów rozpraszających oraz uzależniających, sądzimy, że pozwoli nam to uzyskać bazę użytkowników zmęczonych aktualnymi social mediami.
     - Stawiamy na autentyczność uchwyconych chwil, z tego powodu zrezygnowaliśmy z opcji edycji zdjęć.
     - Całkowita rezygnacja z formatów wideo to nasze główne założenie, którego nie złamiemy w przyszłości.
-  
-
-
-
