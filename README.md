@@ -38,24 +38,46 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 
 **Cele biznesowe:**
 
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
+- Zbudowanie bazy użytkowników zmęczonych aktualnymi social mediami
+  - Kryterium akceptacji: Osiągnięcie 1000 aktywnych użytkowników w ciągu pierwszych 6 miesięcy od wypuszczenia wersji MVP.
+- Minimalizacja kosztów utrzymania infrastruktury
+  - Kryterium akceptacji: Miesięczny koszt utrzymania aplikacji nie przekracza 100 zł przez pierwsze 6 miesięcy
+- Pozyskanie klientów chcących reklamować swoje usługi poprzez posty sponsorowane
+  - Kryterium akceptacji: Osiągniecie co najmniej 2 aktywnych kont firmowych, które opublikowały minimum 1 post sponsorowany w ciągu pierwszych 3 miesięcy od wersji MVP.
+- Architektura systemu umożliwiająca szybkie naprawy
+  - Kryterium akceptacji: Średni czas naprawy błędu (MTTR) nie przekracza 15 minut
+- Weryfikacja narzędzia FFmpeg do przetwarzania zdjęć
+  - Kryterium akceptacji: Średni koszt przechowywania 1000 zdjęć po optymalizacji jest o co najmniej 40% niższy niż w przypadku plików surowych.
+
 
 **Cele użytkownika:**
 
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
+- Użytkownik otrzymuje posty na stronie głównej od obserwowanych osób
+  - Kryterium akceptacji: Użytkownik wchodząc na stronę główną w pierwszej kolejności widzi posty znajomych, dopiero po wyczerpaniu postów wyświetlane są treści rekomendowane
+- Redukcja czasu korzystania z aplikacji
+  - Kryterium akceptacji: Brak szybkich formatów wideo uzależniających użytkowników
+- Intuicyjny interfejs oraz system publikacji zdjęć
+  - Kryterium akceptacji: Czas trwania publikacji zdjęcia od momentu kliknięcia przycisku "Wstaw zdjęcie" wynosi poniżej 1 minuty dla nowego użytkownika
+- Możliwość szybkiego znalezienia konta znajomego
+  - Kryterium akceptacji: Użytkownik wyszukuje znajomego po nazwie i dodaje go do obserwowanych w czasie poniżej 1 minuty
+- Autentyczność uchwyconych zdjęć
+  - Kryterium akceptacji: Użytkownik nie ma możliwości edycji zdjęć ani dodawania filtrów po stronie aplikacji
+
 
 ### 1.3 Definicje, akronimy i skróty
 
-- **IK** - instakilogram
+- **IK** - Instakilogram
 - **Post** - zdjęcie opublikowane przez użytkownika, mogące zawierać opis. Post może być skomentowany oraz polubiony przez innego użytkownika.
+- **MTTR** (Mean Time To Repair) - wskaźnik mierzący średni czas potrzebny na naprawę usterki i przywrócenie sprawności systemu.
+- **EOG** - (Europejski Obszar Gospodarczy) - strefa obejmująca państwa UE oraz Islandię, Liechtenstein i Norwegię.
 
 ### 1.4 Przegląd dokumentu
+
+- **[Rozdział 1 (Wstęp)](#1-wstęp):** Cel aplikacji, wizja produktu oraz cele biznesowe i użytkownika
+- **[Rozdział 2 (Opis ogólny)](#2-opis-ogólny):** Zestawienie głównych funkcji aplikacji, klasy użytkowników, ograniczenia oraz założenia projektowe
+- **[Rozdział 3 (Wymagania funkcjonalne)](#3-wymagania-funkcjonalne):** Szczegółowy opis funkcjonalności w formacie User Stories
+- **[Rozdział 4 (Atrybuty jakościowe)](#4-atrybuty-jakościowe):** Określenie atrybutów jakościowych systemu, takich jak użyteczność czy bezpieczeństwo
+- **[Rozdział 5 (Odkrywanie i Analiza Wymagań)](#5-odkrywanie-i-analiza-wymagań):** Analiza porównawcza z rynkowymi wzorcami
 
 ## 2. Opis ogólny
 
@@ -214,22 +236,22 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **Then:** Otrzymuję informację o poprawnym dodaniu reklamy.
       - **And:** Reklama pojawia się na liście aktywnych reklam.
       - **And:** Reklama może zostać wyświetlona użytkownikom na stronie głównej.
-- **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-  - _Opis:_ Uzytkownik widzi reklamy na stronie głównej.
-  - _Kryteria Akceptacji:_
-    - **Given:** Jestem zalogowany jako zwykły użytkownik.
-    - **And:** Dostępne są posty na stronie głównej.
-    - **When:** Przewijam kilka postó.
-    - **Then:** Widzę post sponsorowany.
-    - **And:** Post jest oznaczony jako sponsorowany.
-- **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
-  - _Opis:_ Reklamodawca widzie swoje statystyki.
-  - _Kryteria Akceptacji:_
-    - **Given:** Jestem zalogowany na konto firmowe.
-    - **And:** Dostępne są posty na stronie głównej.
-    - **When:** Przewijam kilka postó.
-    - **Then:** Widzę post sponsorowany.
-    - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-B: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Użytkownik widzi reklamy na stronie głównej.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany jako zwykły użytkownik.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postów.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
+  - **WF-02-C: Wyświetlenie reklamy użytkownikowi (Scenariusz Główny)**
+    - _Opis:_ Reklamodawca widzi swoje statystyki.
+    - _Kryteria Akceptacji:_
+      - **Given:** Jestem zalogowany na konto firmowe.
+      - **And:** Dostępne są posty na stronie głównej.
+      - **When:** Przewijam kilka postó.
+      - **Then:** Widzę post sponsorowany.
+      - **And:** Post jest oznaczony jako sponsorowany.
 
 **WF-03**
 
@@ -325,8 +347,7 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
       - **And:** Napisałem komentarz i klikam przycisk "Skomentuj"
       - **And:** Użytkownicy mogą zobaczyć mój komenatrz
 
-    - **WF-05-C: Usunięcie polubienia i komentarza (Scenariusz Alternatywny)**
-
+  - **WF-05-C: Usunięcie polubienia i komentarza (Scenariusz Alternatywny)**
     - _Opis:_ Zalogowany użytkownik chcę usunąć dodany komenatrz oraz polubienie
     - _Kryteria Akceptacji:_
       - **Given:** Jestem zalogowanym użytkownikiem oraz skomentowałem i polubiłem post znajomego
@@ -462,7 +483,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Wydajność**           | Jak szybko system odpowiada na żądania w określonych warunkach?       | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień.                                                                                              |
 | **Bezpieczeństwo**      | Jak aplikacja chroni prywatność i dane użytkowników?                  | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
 | **Obserwowalność**      | Jak łatwo można monitorować statystyki?                               | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi.                                                                                                      |
-| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski)                                                                                                                                     |
+| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje                                                                                                                                             |
 | **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
 
 ### 4.2 Mierzalna specyfikacja
@@ -480,26 +501,25 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 
 **Scenariusz 2: Wieloplatformowość**
 
-| Element           | Opis                                                                                                                                      |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Źródło bodźca** | Użytkownik                                                                                                                                |
-| **Bodziec**       | Publikuję nowe zdjęcie                                                                                  |
-| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                                                 |
-| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                                                                              |
-| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane |
-| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie                                            |
+| Element           | Opis                                                                                                              |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------- |
+| **Źródło bodźca** | Użytkownik                                                                                                        |
+| **Bodziec**       | Publikuję nowe zdjęcie                                                                                            |
+| **Artefakt**      | Interfejs użytkownika - publikacja postów                                                                         |
+| **Środowisko**    | Odbiorca korzystający z innej platformy np. ja z telefonu, inna osoba z komputera                                 |
+| **Reakcja**       | System wyświetla post zgodnie z urządzeniem na którym jest pokazywane                                             |
+| **Miara reakcji** | Opublikowane zdjęcie nie jest rozmyte ani zniekształcone. Interfejs jest spójny i estetyczny na każdej platformie |
 
 **Scenariusz 3: Niezawodność**
 
-| Element           | Opis       |
-| :---------------- | :--------------------------------------------------------------- |
-| **Źródło bodźca** | Awaria backendu / Przeciążenie serwerów |
-| **Bodziec**       | Serwer przestaje odpowiadać na żądania (timeout > 5s) |
-| **Artefakt**      | Baza danych lub serwery aplikacji |
-| **Środowisko**    | Normalny ruch użytkowników, główny serwer niedostępny |
-| **Reakcja**       | Aplikacja wykrywa awarię i przekierowuje żądania do serwera zastępczego w ciągu 15s |
+| Element           | Opis                                                                                        |
+| :---------------- | :------------------------------------------------------------------------------------------ |
+| **Źródło bodźca** | Awaria backendu / Przeciążenie serwerów                                                     |
+| **Bodziec**       | Serwer przestaje odpowiadać na żądania (timeout > 5s)                                       |
+| **Artefakt**      | Baza danych lub serwery aplikacji                                                           |
+| **Środowisko**    | Normalny ruch użytkowników, główny serwer niedostępny                                       |
+| **Reakcja**       | Aplikacja wykrywa awarię i przekierowuje żądania do serwera zastępczego w ciągu 15s         |
 | **Miara reakcji** | Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika |
-
 
 ### 4.3 Analiza kompromisów architektonicznych
 
@@ -516,6 +536,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
     - Zwiększamy czas potrzebny do implementacji poprzez research upodobań użytkowników.
 
 **4.3.2 Wieloplatformowość**
+
 - **Cel:** Zachowanie spójnego wyglądu oraz funkcjonalności niezależnie od urządzenia z którego korzysta użytkownik.
 - **Możliwe rozwiązanie architektoniczne:** Zastosowanie technik do responsywności takich jak media queries w css. Wykorzystanie jednego formatu zdjęć i ograniczenie maksymalnych wymiarów aby uniknąć rozjeżdżaniu się layoutu.
 - **Kompromis:**
@@ -525,7 +546,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Ograniczenie rozmiaru może wpłynąć negatywnie przy większych obrazach.
     - Zwiększamy czas potrzebny do implementacji responsywnych stron.
- 
+
 **4.3.3 Niezawodność**
 
 - **Cel:** Uptime ≥ 95% w skali miesiąca; MTTR < 15 minut; max 2 minuty niedostępności dla użytkownika
@@ -537,7 +558,6 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
   - **Negatywny:**
     - Wzrost kosztów chumry w związku z potrzebą utrzymania nowych serwerów
     - Większa złożoność systemu która utrudni debugowanie i zwiększy czas wdrażania nowych rozwiązań
-    
 
 ## 5. Odkrywanie i Analiza Wymagań
 
@@ -550,17 +570,37 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
     - **Instagram** - największa platforma społecznościowa do udostępnienia zdjęć oraz filmów
     - **BeReal** - aplikacja, która zachęca użytkowników do dzielenia się nieedytowanymi zdjęciami pokazującymi rzeczywistość
   - _Konkurencja pośrednia:_
-    - **XYZ** - vvvvvvvvvvvvvvvvvv
+    - **Pinterest** - platforma ze zdjęciami z inteligentnym systemem rekomendacji
   - _Wzorce funkcjonalne:_
-    - **XYZ** - vvvvvvvvvvvvvvvvvv
+    - **Messenger** - aplikacja do komunikacji ze znajomymi, wzorzec komunikatora
 
 - **Zdefiniowanie Kryteriów Oceny:** Tabela z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
   | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
   | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal |
-  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal |
-  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal |
-  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal |
-  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal |
+  | **Dostępne formaty** | Typy treści możliwe do publikacji | Tylko zdjęcia | Zdjęcia, krótkie filmy, stories, transmisje live | Jedno zdjęcie dzienne wykonane obiema kamerami jednocześnie |
+  | **Rekomendacje** | Sposób dobierania treści | Posty znajomych oraz rekomendacje na podstawie zainteresowań | Posty znajomych oraz algorytmy promujące viralowe treści | Tylko treści od znajomych |
+  | **User experience** | Intuicyjność korzystania z platformy | Aplikacja redukująca rozpraszacze oraz intuicyjne systemy publikacji postów oraz interakcji z użytkownikami | Intuicyjna aplikacja, aktualnie promująca szybkie treści wideo | Prostota oraz duża intuicyjność |
+  | **Model biznesowy** | Sposób zarabiania platformy | Sponsorowane posty firmowe | Sponsorowane treści, targetowane reklamy, subskrypcje | Reklamy |
+  | **Edycja oraz filtry** | Narzędzia do edycji treści | Brak | Zaawansowane filtry oraz możliwość edycji | Brak |
+  | **Interakcje** | Sposoby komunikacji między użytkownikami | Komentarze oraz polubienia | Polubienia, komentarze, udostępnienia oraz chat | Reakcje w postaci zdjęcia oraz komentarze |
+  | **Dostępność** | Wspierane urządzenia | Priorytet na urządzenia mobilne | Wszystkie platformy | Aplikacje mobilne |
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | Moderacja przez administratrorów, system zgłaszania treści przez użytkowników | Centra pomocy, automatyczna moderacja | System zgłaszania treści przez użytkowników |
+  | **Prywatność i dane** | Ochrona danych osobowych | Zgodność z RODO, dane przechowywane na serwerach w EOG | Przetwarzanie globalne, agresywne przetwarzanie danych | Przetwarzanie globalne, mniejszy zakres zbieranych danych |
 
-- **Synteza Wyników:** Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują?
+- **Synteza Wyników:**
+  - **Silne punkty konkurencji oraz ich unikalne funkcje:**
+    - Wysoki poziom retencji użytkowników przez uzależniające treści (Instagram)
+    - Zaawansowane opcje edycji zdjęć (Instagram)
+    - Transmisje live oraz stories (Instagram)
+    - Jednoczesne zdjęcie dwoma kamerami, unikalna funkcjonalność (BeReal)
+
+  - **Słabe punkty konkurencji:**
+    - Duży szum informacyjny i przebodźcowanie (Instagram)
+    - Silna edycja zdjęć odbiera im ich autentyczność (Instagram)
+    - Wykorzystywanie danych użytkowników do celów reklamowych (Instagram, BeReal)
+    - Uchwycenie zdjęć w określonym przez aplikację momencie (BeReal)
+
+  - **Wnioski:**
+    - Nasza aplikacja skupia się przede wszystkim na redukcji elementów rozpraszających oraz uzależniających, sądzimy, że pozwoli nam to uzyskać bazę użytkowników zmęczonych aktualnymi social mediami.
+    - Stawiamy na autentyczność uchwyconych chwil, z tego powodu zrezygnowaliśmy z opcji edycji zdjęć.
+    - Całkowita rezygnacja z formatów wideo to nasze główne założenie, którego nie złamiemy w przyszłości.
