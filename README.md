@@ -52,10 +52,17 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 
 **Cele użytkownika:**
 
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
-- vvvvvvvvvv
-  - Kryterium akceptacji: vvv
+- Użytkownik otrzymuje posty na stronie głównej od obserwowanych osób
+  - Kryterium akceptacji: Użytkownik wchodząc na stronę główną w pierwszej kolejności widzi posty znajomych, dopiero po wyczerpaniu postów wyświetlane są treści rekomendowane
+- Redukcja czasu korzystania z aplikacji
+  - Kryterium akceptacji: Brak szybkich formatów wideo uzależniających użytkowników
+- Intuicyjny interfejs oraz system publikacji zdjęć
+  - Kryterium akceptacji: Czas trwania publikacji zdjęcia od momentu kliknięcia przycisku "Wstaw zdjęcie" wynosi poniżej 1 minuty dla nowego użytkownika
+- Możliwość szybkiego znalezienia konta znajomego
+  - Kryterium akceptacji: Użytkownik wyszukuje znajomego po nazwie i dodaje go do obserwowanych w czasie poniżej 1 minuty
+- Autentyczność uchwyconych zdjęć
+  - Kryterium akceptacji: Użytkownik nie ma możliwości edycji zdjęć ani dodawania filtrów po stronie aplikacji
+
 
 ### 1.3 Definicje, akronimy i skróty
 
