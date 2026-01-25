@@ -570,4 +570,24 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
   | **Prywatność i dane** | Ochrona danych osobowych | Zgodność z RODO, dane przechowywane na serwerach w EOG | Przetwarzanie globalne, agresywne przetwarzanie danych | Przetwarzanie globalne, mniejszy zakres zbieranych danych |
 
 
-- **Synteza Wyników:** Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują?
+- **Synteza Wyników:**
+  - **Silne punkty konkurencji oraz ich unikalne funkcje:**
+    - Wysoki poziom retencji użytkowników przez uzależniające treści (Instagram)
+    - Zaawansowane opcje edycji zdjęć (Instagram)
+    - Transmisje live oraz stories (Instagram)
+    - Jednoczesne zdjęcie dwoma kamerami, unikalna funkcjonalność (BeReal)
+
+  - **Słabe punkty konkurencji:**
+    - Duży szum informacyjny i przebodźcowanie (Instagram)
+    - Silna edycja zdjęć odbiera im ich autentyczność (Instagram)
+    - Wykorzystywanie danych użytkowników do celów reklamowych (Instagram, BeReal)
+    - Uchwycenie zdjęć w określonym przez aplikację momencie (BeReal)
+
+  - **Wnioski:**
+    - Nasza aplikacja skupia się przede wszystkim na redukcji elementów rozpraszających oraz uzależniających, sądzimy, że pozwoli nam to uzyskać bazę użytkowników zmęczonych aktualnymi social mediami.
+    - Stawiamy na autentyczność uchwyconych chwil, z tego powodu zrezygnowaliśmy z opcji edycji zdjęć.
+    - Całkowita rezygnacja z formatów wideo to nasze główne założenie, którego nie złamiemy w przyszłości.
+  
+
+
+
