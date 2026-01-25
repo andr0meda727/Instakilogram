@@ -54,6 +54,8 @@ Aplikacja nie będzie obsługiwać następujących funkcjonalności:
 
 - **IK** - instakilogram
 - **Post** - zdjęcie opublikowane przez użytkownika, mogące zawierać opis. Post może być skomentowany oraz polubiony przez innego użytkownika.
+- **MTTR** (Mean Time To Repair) - wskaźnik mierzący średni czas potrzebny na naprawę usterki i przywrócenie sprawności systemu.
+- **EOG** - (Europejski Obszar Gospodarczy) - strefa obejmująca państwa UE oraz Islandię, Liechtenstein i Norwegię.
 
 ### 1.4 Przegląd dokumentu
 
@@ -462,7 +464,7 @@ Atrybuty jakościowe definiują, jak dobrze system ma działać. Wpłwają one n
 | **Wydajność**           | Jak szybko system odpowiada na żądania w określonych warunkach?       | Działanie natychmiastowe nie jest kluczowym priorytem, nie chcemy żeby użytkownicy musieli czekać aż załadują się nowe zdjęcia, ale nie potrzebujemy minimalnych opoźnień.                                                                                              |
 | **Bezpieczeństwo**      | Jak aplikacja chroni prywatność i dane użytkowników?                  | Użytkownicy mają możliwość ustawienia profilu na prywatny, co pozwala dzielić się im swoimi zdjęciami tylko z obserwującymi. Istotne jest, żeby nie było żadnych luk w bezpieczeństwie, które pozwolą na niekontrolowany dostęp do owych zdjęć, jak i danych logowania. |
 | **Obserwowalność**      | Jak łatwo można monitorować statystyki?                               | Monitorowanie metryk takich jak wyświetlenia, polubienia, komentarze oraz zaangażowanie będzie istotne dla klientów biznesowych, chcących reklamować swoje usługi.                                                                                                      |
-| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje (niski)                                                                                                                                     |
+| **Rozszerzalność**      | Jak łatwo będzie rozszerzać aplikacje o kolejne funkcjonalności?      | Dodawanie nowych funkcjonalności nie będzie naszym priorytetem, ze względu na to, że chcemy ograniczać niepotrzebne funkcje                                                                                                                                      |
 | **Internacjonalizacja** | Jak aplikacja rozwiązuje problem użytkowników z różnych krajów?       | Wprowadzenie kilku języków nie jest wymagane do podstawowego działania aplikacji w Polsce. Przyszłościowo można dodać opcje tłumaczenia, żeby wyjść na rynek zagraniczny                                                                                                |
 
 ### 4.2 Mierzalna specyfikacja
@@ -550,17 +552,22 @@ Porównanie aplikacji IK z najlepszymi praktykami rynkowymi w celu identyfikacji
     - **Instagram** - największa platforma społecznościowa do udostępnienia zdjęć oraz filmów
     - **BeReal** - aplikacja, która zachęca użytkowników do dzielenia się nieedytowanymi zdjęciami pokazującymi rzeczywistość
   - _Konkurencja pośrednia:_
-    - **XYZ** - vvvvvvvvvvvvvvvvvv
+    - **Pinterest** - platforma ze zdjęciami z inteligentnym systemem rekomendacji
   - _Wzorce funkcjonalne:_
-    - **XYZ** - vvvvvvvvvvvvvvvvvv
+    - **Messenger** - aplikacja do komunikacji ze znajomymi, wzorzec komunikatora
 
 - **Zdefiniowanie Kryteriów Oceny:** Tabela z kryteriami obejmującymi kluczowe aspekty, takie jak funkcjonalność, user experience (UX), model biznesowy i wsparcie.
   | Kryterium | Opis kryterium | Instakilogram | Instagram | BeReal |
   | :---------------------- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-  | **Dostępne formaty do publikacji** | Co można opublikować na platformie? | IK | IG | BeReal |
-  | **Inteligentne rekomendacje** | Sposób działania systemu rekomendacji postów | IK | IG | BeReal |
-  | **User experience** | Intuicyjność korzystania z aplikacji | IK | IG | BeReal |
-  | **Model biznesowy** | vvvvvvv | IK | IG | BeReal |
-  | **Wsparcie** | Dostępność wsparcia dla użytkowników | IK | IG | BeReal |
+  | **Dostępne formaty** | Typy treści możliwe do publikacji | Tylko zdjęcia | Zdjęcia, krótkie filmy, stories, transmisje live | Jedno zdjęcie dzienne wykonane obiema kamerami jednocześnie |
+  | **Rekomendacje** | Sposób dobierania treści | Posty znajomych oraz rekomendacje na podstawie zainteresowań | Posty znajomych oraz algorytmy promujące viralowe treści | Tylko treści od znajomych |
+  | **User experience** | Intuicyjność korzystania z platformy | Aplikacja redukująca rozpraszacze oraz intuicyjne systemy publikacji postów oraz interakcji z użytkownikami | Intuicyjna aplikacja, aktualnie promująca szybkie treści wideo | Prostota oraz duża intuicyjność |
+  | **Model biznesowy** | Sposób zarabiania platformy | Sponsorowane posty firmowe | Sponsorowane treści, targetowane reklamy, subskrypcje | Reklamy |
+  | **Edycja oraz filtry** | Narzędzia do edycji treści | Brak | Zaawansowane filtry oraz możliwość edycji | Brak |
+  | **Interakcje** | Sposoby komunikacji między użytkownikami | Komentarze oraz polubienia | Polubienia, komentarze, udostępnienia oraz chat | Reakcje w postaci zdjęcia oraz komentarze |
+  | **Dostępność** | Wspierane urządzenia | Priorytet na urządzenia mobilne | Wszystkie platformy | Aplikacje mobilne |
+  | **Wsparcie** | Dostępność wsparcia dla użytkowników | Moderacja przez administratrorów, system zgłaszania treści przez użytkowników | Centra pomocy, automatyczna moderacja | System zgłaszania treści przez użytkowników |
+  | **Prywatność i dane** | Ochrona danych osobowych | Zgodność z RODO, dane przechowywane na serwerach w EOG | Przetwarzanie globalne, agresywne przetwarzanie danych | Przetwarzanie globalne, mniejszy zakres zbieranych danych |
+
 
 - **Synteza Wyników:** Co konkurencja robi dobrze? Gdzie są ich słabe punkty? Jakie unikalne funkcje oferują?
