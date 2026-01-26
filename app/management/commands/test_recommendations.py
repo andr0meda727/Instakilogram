@@ -1,5 +1,6 @@
 """
 Management command to test the KNN recommendation system
+Works with both vanilla and sklearn versions
 Usage: python manage.py test_recommendations <username>
 """
 from django.core.management.base import BaseCommand
@@ -84,18 +85,32 @@ class Command(BaseCommand):
             self.stdout.write(f'   Likes: {likes_count}')
             self.stdout.write('')
 
-        # Show similar users (for debugging)
+        # Show similar users (for debugging) - check which method exists
         user_liked_posts = set(user_likes.values_list('post_id', flat=True))
         if user_liked_posts:
-            similar_users = rec_service._find_similar_users(user, user_liked_posts)
+            # Try to get similar users - handle both vanilla and sklearn versions
+            try:
+                # Try sklearn version first
+                if hasattr(rec_service, '_find_similar_users_sklearn'):
+                    similar_users = rec_service._find_similar_users_sklearn(user, user_liked_posts)
+                # Try vanilla version
+                elif hasattr(rec_service, '_find_similar_users'):
+                    similar_users = rec_service._find_similar_users(user, user_liked_posts)
+                else:
+                    similar_users = []
 
-            self.stdout.write(
-                self.style.SUCCESS(f'\n=== Top {min(5, len(similar_users))} Similar Users ===\n')
-            )
+                if similar_users:
+                    self.stdout.write(
+                        self.style.SUCCESS(f'\n=== Top {min(5, len(similar_users))} Similar Users ===\n')
+                    )
 
-            for similar_user, similarity in similar_users[:5]:
+                    for similar_user, similarity in similar_users[:5]:
+                        self.stdout.write(
+                            f'@{similar_user.username} (similarity: {similarity:.3f})'
+                        )
+            except Exception as e:
                 self.stdout.write(
-                    f'@{similar_user.username} (similarity: {similarity:.3f})'
+                    self.style.WARNING(f'\nCould not fetch similar users: {e}')
                 )
 
         self.stdout.write(
