@@ -1,28 +1,10 @@
-# views.py
-
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import Q
-from .models import User, Post, Like, Friendship
-from .serializers import UserSerializer, PostSerializer, LikeSerializer, FriendshipSerializer
-
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
-    
-    @action(detail=False, methods=['get'])
-    def me(self, request):
-        serializer = self.get_serializer(request.user)
-        return Response(serializer.data)
-    
-    @action(detail=False, methods=['get'])
-    def friends(self, request):
-        friendships = Friendship.objects.filter(user=request.user)
-        serializer = FriendshipSerializer(friendships, many=True)
-        return Response(serializer.data)
+from app.models import Post, Like, Friendship
+from app.serializers import PostSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
@@ -92,6 +74,7 @@ class PostViewSet(viewsets.ModelViewSet):
     
     @action(detail=True, methods=['post'])
     def like(self, request, pk=None):
+        """Polub post"""
         post = self.get_object()
         like, created = Like.objects.get_or_create(user=request.user, post=post)
         
@@ -101,14 +84,10 @@ class PostViewSet(viewsets.ModelViewSet):
     
     @action(detail=True, methods=['post'])
     def unlike(self, request, pk=None):
+        """Odlub post"""
         post = self.get_object()
         deleted, _ = Like.objects.filter(user=request.user, post=post).delete()
         
         if deleted:
             return Response({'status': 'unliked'}, status=status.HTTP_200_OK)
         return Response({'status': 'not_liked'}, status=status.HTTP_400_BAD_REQUEST)
-
-class LikeViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Like.objects.all()
-    serializer_class = LikeSerializer
-    permission_classes = [IsAuthenticated]
